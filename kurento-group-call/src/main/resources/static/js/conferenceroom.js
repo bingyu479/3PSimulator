@@ -53,6 +53,7 @@ ws.onmessage = function(message) {
 	}
 }
 
+// After clicking "Join!" button
 function register() {
 	name = document.getElementById('name').value;
 	var room = document.getElementById('roomName').value;
@@ -70,6 +71,7 @@ function register() {
 }
 
 function onNewParticipant(request) {
+    console.info('receive video from: ' + request.name);
 	receiveVideo(request.name);
 }
 
@@ -138,6 +140,8 @@ function leaveRoom() {
 }
 
 function receiveVideo(sender) {
+// this is called after browser client joined and alexa client got notified
+// id: newParticipantArrived, name: browser(sender)
 	var participant = new Participant(sender);
 	participants[sender] = participant;
 	var video = participant.getVideoElement();

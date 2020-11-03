@@ -54,11 +54,12 @@ public class CallHandler extends TextWebSocketHandler {
     final JsonObject jsonMessage = gson.fromJson(message.getPayload(), JsonObject.class);
 
     final UserSession user = registry.getBySession(session);
+    log.info("Bingyu: session is {}", session.toString());
 
     if (user != null) {
-      log.debug("Incoming message from user '{}': {}", user.getName(), jsonMessage);
+      log.info("Incoming message from user '{}': {}", user.getName(), jsonMessage);
     } else {
-      log.debug("Incoming message from new user: {}", jsonMessage);
+      log.info("Incoming message from new user: {}", jsonMessage);
     }
 
     switch (jsonMessage.get("id").getAsString()) {
@@ -99,6 +100,7 @@ public class CallHandler extends TextWebSocketHandler {
     final String name = params.get("name").getAsString();
     log.info("PARTICIPANT {}: trying to join room {}", name, roomName);
 
+    // Get or create new room
     Room room = roomManager.getRoom(roomName);
     final UserSession user = room.join(name, session);
     registry.register(user);

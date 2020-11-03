@@ -1,0 +1,1258 @@
+[INFO] Scanning for projects...
+Downloading from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kurento-parent-pom/6.14.1-SNAPSHOT/maven-metadata.xml
+Progress (1): 367 B                   Downloaded from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kurento-parent-pom/6.14.1-SNAPSHOT/maven-metadata.xml (367 B at 222 B/s)
+[INFO] 
+[INFO] --------------< org.kurento.tutorial:kurento-group-call >---------------
+[INFO] Building Kurento Java Tutorial - Group Call 6.14.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kurento-client/6.14.1-SNAPSHOT/maven-metadata.xml
+Progress (1): 363 B                   Downloaded from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kurento-client/6.14.1-SNAPSHOT/maven-metadata.xml (363 B at 750 B/s)
+Downloading from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kurento-jsonrpc-client/6.14.1-SNAPSHOT/maven-metadata.xml
+Progress (1): 371 B                   Downloaded from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kurento-jsonrpc-client/6.14.1-SNAPSHOT/maven-metadata.xml (371 B at 804 B/s)
+Downloading from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kurento-jsonrpc/6.14.1-SNAPSHOT/maven-metadata.xml
+Progress (1): 364 B                   Downloaded from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kurento-jsonrpc/6.14.1-SNAPSHOT/maven-metadata.xml (364 B at 816 B/s)
+Downloading from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kurento-commons/6.14.1-SNAPSHOT/maven-metadata.xml
+Progress (1): 364 B                   Downloaded from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kurento-commons/6.14.1-SNAPSHOT/maven-metadata.xml (364 B at 805 B/s)
+Downloading from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kms-api-core/6.14.1-SNAPSHOT/maven-metadata.xml
+Progress (1): 362 B                   Downloaded from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kms-api-core/6.14.1-SNAPSHOT/maven-metadata.xml (362 B at 786 B/s)
+Downloading from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kms-api-elements/6.14.1-SNAPSHOT/maven-metadata.xml
+Progress (1): 366 B                   Downloaded from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kms-api-elements/6.14.1-SNAPSHOT/maven-metadata.xml (366 B at 643 B/s)
+Downloading from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kms-api-filters/6.14.1-SNAPSHOT/maven-metadata.xml
+Progress (1): 365 B                   Downloaded from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kms-api-filters/6.14.1-SNAPSHOT/maven-metadata.xml (365 B at 609 B/s)
+Downloading from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kurento-utils-js/6.14.1-SNAPSHOT/maven-metadata.xml
+Progress (1): 365 B                   Downloaded from kurento-snapshots: https://maven.openvidu.io/repository/snapshots/org/kurento/kurento-utils-js/6.14.1-SNAPSHOT/maven-metadata.xml (365 B at 798 B/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ kurento-group-call ---
+[INFO] Deleting /Users/wanbingy/workspace/kurento-tutorial-java-alexa/kurento-group-call/target
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:2.2.4.RELEASE:run (default-cli) > test-compile @ kurento-group-call >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-java-version) @ kurento-group-call ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-maven-version) @ kurento-group-call ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-bytecode-version) @ kurento-group-call ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-ban-duplicate-classes) @ kurento-group-call ---
+[INFO] Adding ignore: module-info
+[INFO] Adding ignore: META-INF/versions/*/module-info
+[WARNING] Rule 0: org.apache.maven.plugins.enforcer.BanDuplicateClasses failed with message:
+Duplicate classes found:
+
+  Found in:
+    commons-logging:commons-logging:jar:1.2:compile
+    org.springframework:spring-jcl:jar:5.2.3.RELEASE:compile
+  Duplicate classes:
+    org/apache/commons/logging/Log.class
+    org/apache/commons/logging/LogFactory$1.class
+    org/apache/commons/logging/impl/NoOpLog.class
+    org/apache/commons/logging/impl/SimpleLog.class
+    org/apache/commons/logging/LogFactory.class
+
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M2:enforce (enforce-ban-circular-dependencies) @ kurento-group-call ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create-timestamp (get-build-timestamp) @ kurento-group-call ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ kurento-group-call ---
+[INFO] Executing: /bin/sh -c cd '/Users/wanbingy/workspace/kurento-tutorial-java-alexa/kurento-group-call' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /Users/wanbingy/workspace/kurento-tutorial-java-alexa/kurento-group-call
+[INFO] Storing buildNumber: c7283f21667ba980a93094d8f62fa5cadaf085de at timestamp: 1604119661780
+[INFO] Storing buildScmBranch: master
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ kurento-group-call ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ kurento-group-call ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /Users/wanbingy/workspace/kurento-tutorial-java-alexa/kurento-group-call/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ kurento-group-call ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/wanbingy/workspace/kurento-tutorial-java-alexa/kurento-group-call/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ kurento-group-call ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:2.2.4.RELEASE:run (default-cli) < test-compile @ kurento-group-call <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.2.4.RELEASE:run (default-cli) @ kurento-group-call ---
+[INFO] Attaching agents: []
+
+   .------------------------------------.
+   |                                    |
+   |   | |/ /  _ _ _ ___ _ _| |_ ___    |
+   |   | ' < || | '_/ -_) ' \  _/ _ \   |
+   |   |_|\_\_,_|_| \___|_||_\__\___/   |
+   |                                    |
+   '------------------------------------'
+       Kurento Java Tutorial - Group Call
+       Version 6.14.1-SNAPSHOT
+
+2020-10-30 21:47:49.128  INFO 30078 --- [           main] o.k.t.groupcall.GroupCallApplication     : Starting GroupCallApplication on 4c32759c0d47.ant.amazon.com with PID 30078 (/Users/wanbingy/workspace/kurento-tutorial-java-alexa/kurento-group-call/target/classes started by wanbingy in /Users/wanbingy/workspace/kurento-tutorial-java-alexa/kurento-group-call)
+2020-10-30 21:47:49.131  INFO 30078 --- [           main] o.k.t.groupcall.GroupCallApplication     : No active profile set, falling back to default profiles: default
+2020-10-30 21:47:52.447  INFO 30078 --- [rbeatExec-e1-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 21:47:52.448  INFO 30078 --- [rbeatExec-e1-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Creating new NioEventLoopGroup
+2020-10-30 21:47:52.699  INFO 30078 --- [ntLoopGroup-2-1] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 21:47:55.031  INFO 30078 --- [           main] o.k.t.groupcall.GroupCallApplication     : Started GroupCallApplication in 6.848 seconds (JVM running for 8.529)
+2020-10-30 21:48:53.020  INFO 30078 --- [ntLoopGroup-2-1] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 21:48:53.023  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 21:48:53.023  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 21:48:53.026  INFO 30078 --- [ntLoopGroup-2-2] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 21:49:33.989  INFO 30078 --- [nio-8443-exec-1] o.k.tutorial.groupcall.CallHandler       : Got initiateSessionWithOffer, initiating a new session with SDP offer: {"sdpOffer": "a new offer"}
+2020-10-30 21:49:42.182  INFO 30078 --- [nio-8443-exec-7] o.k.tutorial.groupcall.CallHandler       : Incoming message from new user: {"id":"joinRoom","name":"first","room":"M1"}
+2020-10-30 21:49:42.183  INFO 30078 --- [nio-8443-exec-7] o.k.tutorial.groupcall.CallHandler       : PARTICIPANT first: trying to join room M1
+2020-10-30 21:49:42.240  INFO 30078 --- [nio-8443-exec-7] org.kurento.tutorial.groupcall.Room      : ROOM M1 has been created
+2020-10-30 21:49:42.241  INFO 30078 --- [nio-8443-exec-7] org.kurento.tutorial.groupcall.Room      : ROOM M1: adding participant first
+2020-10-30 21:49:42.329  INFO 30078 --- [nio-8443-exec-7] org.kurento.tutorial.groupcall.Room      : ROOM M1: notifying other participants of new participant first
+2020-10-30 21:49:42.330  INFO 30078 --- [nio-8443-exec-7] org.kurento.tutorial.groupcall.Room      : PARTICIPANT first: sending a list of 0 participants
+2020-10-30 21:49:42.330  INFO 30078 --- [nio-8443-exec-7] o.k.tutorial.groupcall.UserSession       : USER first: Sending message {"id":"existingParticipants","data":[]}
+2020-10-30 21:49:43.235  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"receiveVideoFrom","sender":"first","sdpOffer":"v=0\r\no=- 6436835561851671713 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=msid-semantic: WMS NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 104 9 0 8 106 105 13 110 112 113 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:PmX2\r\na=ice-pwd:baG2A5JQL31G39kEbe/HOwDI\r\na=ice-options:trickle\r\na=fingerprint:sha-256 E1:19:9B:C5:5F:88:FA:AB:17:FF:85:19:C8:68:76:FD:8A:6A:11:B4:2A:D6:18:9C:F1:74:23:F9:46:5A:11:80\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendrecv\r\na=msid:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC 95f3bbad-c4f5-46aa-8377-9e286010847c\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:104 ISAC/32000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:106 CN/32000\r\na=rtpmap:105 CN/16000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:112 telephone-event/32000\r\na=rtpmap:113 telephone-event/16000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:2387549136 cname:2z0hRDVoFiLQp+in\r\na=ssrc:2387549136 msid:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC 95f3bbad-c4f5-46aa-8377-9e286010847c\r\na=ssrc:2387549136 mslabel:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC\r\na=ssrc:2387549136 label:95f3bbad-c4f5-46aa-8377-9e286010847c\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100 101 102 121 127 120 125 107 108 109 124 119 123 118 114 115 116\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:PmX2\r\na=ice-pwd:baG2A5JQL31G39kEbe/HOwDI\r\na=ice-options:trickle\r\na=fingerprint:sha-256 E1:19:9B:C5:5F:88:FA:AB:17:FF:85:19:C8:68:76:FD:8A:6A:11:B4:2A:D6:18:9C:F1:74:23:F9:46:5A:11:80\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:12 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:11 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendrecv\r\na=msid:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC 78cfb4a8-f190-4437-b586-1aa438902783\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:121 rtx/90000\r\na=fmtp:121 apt=102\r\na=rtpmap:127 H264/90000\r\na=rtcp-fb:127 goog-remb\r\na=rtcp-fb:127 transport-cc\r\na=rtcp-fb:127 ccm fir\r\na=rtcp-fb:127 nack\r\na=rtcp-fb:127 nack pli\r\na=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:120 rtx/90000\r\na=fmtp:120 apt=127\r\na=rtpmap:125 H264/90000\r\na=rtcp-fb:125 goog-remb\r\na=rtcp-fb:125 transport-cc\r\na=rtcp-fb:125 ccm fir\r\na=rtcp-fb:125 nack\r\na=rtcp-fb:125 nack pli\r\na=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=125\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:124 H264/90000\r\na=rtcp-fb:124 goog-remb\r\na=rtcp-fb:124 transport-cc\r\na=rtcp-fb:124 ccm fir\r\na=rtcp-fb:124 nack\r\na=rtcp-fb:124 nack pli\r\na=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=124\r\na=rtpmap:123 H264/90000\r\na=rtcp-fb:123 goog-remb\r\na=rtcp-fb:123 transport-cc\r\na=rtcp-fb:123 ccm fir\r\na=rtcp-fb:123 nack\r\na=rtcp-fb:123 nack pli\r\na=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032\r\na=rtpmap:118 rtx/90000\r\na=fmtp:118 apt=123\r\na=rtpmap:114 red/90000\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 ulpfec/90000\r\na=ssrc-group:FID 955241346 1846364400\r\na=ssrc:955241346 cname:2z0hRDVoFiLQp+in\r\na=ssrc:955241346 msid:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC 78cfb4a8-f190-4437-b586-1aa438902783\r\na=ssrc:955241346 mslabel:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC\r\na=ssrc:955241346 label:78cfb4a8-f190-4437-b586-1aa438902783\r\na=ssrc:1846364400 cname:2z0hRDVoFiLQp+in\r\na=ssrc:1846364400 msid:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC 78cfb4a8-f190-4437-b586-1aa438902783\r\na=ssrc:1846364400 mslabel:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC\r\na=ssrc:1846364400 label:78cfb4a8-f190-4437-b586-1aa438902783\r\n"}
+2020-10-30 21:49:43.236  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : USER first: connecting with first in room M1
+2020-10-30 21:49:43.236  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : USER first: SdpOffer for first is v=0
+o=- 6436835561851671713 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE 0 1
+a=msid-semantic: WMS NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC
+m=audio 9 UDP/TLS/RTP/SAVPF 111 103 104 9 0 8 106 105 13 110 112 113 126
+c=IN IP4 0.0.0.0
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:PmX2
+a=ice-pwd:baG2A5JQL31G39kEbe/HOwDI
+a=ice-options:trickle
+a=fingerprint:sha-256 E1:19:9B:C5:5F:88:FA:AB:17:FF:85:19:C8:68:76:FD:8A:6A:11:B4:2A:D6:18:9C:F1:74:23:F9:46:5A:11:80
+a=setup:actpass
+a=mid:0
+a=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01
+a=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid
+a=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id
+a=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id
+a=sendrecv
+a=msid:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC 95f3bbad-c4f5-46aa-8377-9e286010847c
+a=rtcp-mux
+a=rtpmap:111 opus/48000/2
+a=rtcp-fb:111 transport-cc
+a=fmtp:111 minptime=10;useinbandfec=1
+a=rtpmap:103 ISAC/16000
+a=rtpmap:104 ISAC/32000
+a=rtpmap:9 G722/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:106 CN/32000
+a=rtpmap:105 CN/16000
+a=rtpmap:13 CN/8000
+a=rtpmap:110 telephone-event/48000
+a=rtpmap:112 telephone-event/32000
+a=rtpmap:113 telephone-event/16000
+a=rtpmap:126 telephone-event/8000
+a=ssrc:2387549136 cname:2z0hRDVoFiLQp+in
+a=ssrc:2387549136 msid:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC 95f3bbad-c4f5-46aa-8377-9e286010847c
+a=ssrc:2387549136 mslabel:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC
+a=ssrc:2387549136 label:95f3bbad-c4f5-46aa-8377-9e286010847c
+m=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100 101 102 121 127 120 125 107 108 109 124 119 123 118 114 115 116
+c=IN IP4 0.0.0.0
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:PmX2
+a=ice-pwd:baG2A5JQL31G39kEbe/HOwDI
+a=ice-options:trickle
+a=fingerprint:sha-256 E1:19:9B:C5:5F:88:FA:AB:17:FF:85:19:C8:68:76:FD:8A:6A:11:B4:2A:D6:18:9C:F1:74:23:F9:46:5A:11:80
+a=setup:actpass
+a=mid:1
+a=extmap:14 urn:ietf:params:rtp-hdrext:toffset
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=extmap:13 urn:3gpp:video-orientation
+a=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01
+a=extmap:12 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay
+a=extmap:11 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type
+a=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing
+a=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space
+a=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid
+a=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id
+a=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id
+a=sendrecv
+a=msid:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC 78cfb4a8-f190-4437-b586-1aa438902783
+a=rtcp-mux
+a=rtcp-rsize
+a=rtpmap:96 VP8/90000
+a=rtcp-fb:96 goog-remb
+a=rtcp-fb:96 transport-cc
+a=rtcp-fb:96 ccm fir
+a=rtcp-fb:96 nack
+a=rtcp-fb:96 nack pli
+a=rtpmap:97 rtx/90000
+a=fmtp:97 apt=96
+a=rtpmap:98 VP9/90000
+a=rtcp-fb:98 goog-remb
+a=rtcp-fb:98 transport-cc
+a=rtcp-fb:98 ccm fir
+a=rtcp-fb:98 nack
+a=rtcp-fb:98 nack pli
+a=fmtp:98 profile-id=0
+a=rtpmap:99 rtx/90000
+a=fmtp:99 apt=98
+a=rtpmap:100 VP9/90000
+a=rtcp-fb:100 goog-remb
+a=rtcp-fb:100 transport-cc
+a=rtcp-fb:100 ccm fir
+a=rtcp-fb:100 nack
+a=rtcp-fb:100 nack pli
+a=fmtp:100 profile-id=2
+a=rtpmap:101 rtx/90000
+a=fmtp:101 apt=100
+a=rtpmap:102 H264/90000
+a=rtcp-fb:102 goog-remb
+a=rtcp-fb:102 transport-cc
+a=rtcp-fb:102 ccm fir
+a=rtcp-fb:102 nack
+a=rtcp-fb:102 nack pli
+a=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f
+a=rtpmap:121 rtx/90000
+a=fmtp:121 apt=102
+a=rtpmap:127 H264/90000
+a=rtcp-fb:127 goog-remb
+a=rtcp-fb:127 transport-cc
+a=rtcp-fb:127 ccm fir
+a=rtcp-fb:127 nack
+a=rtcp-fb:127 nack pli
+a=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f
+a=rtpmap:120 rtx/90000
+a=fmtp:120 apt=127
+a=rtpmap:125 H264/90000
+a=rtcp-fb:125 goog-remb
+a=rtcp-fb:125 transport-cc
+a=rtcp-fb:125 ccm fir
+a=rtcp-fb:125 nack
+a=rtcp-fb:125 nack pli
+a=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f
+a=rtpmap:107 rtx/90000
+a=fmtp:107 apt=125
+a=rtpmap:108 H264/90000
+a=rtcp-fb:108 goog-remb
+a=rtcp-fb:108 transport-cc
+a=rtcp-fb:108 ccm fir
+a=rtcp-fb:108 nack
+a=rtcp-fb:108 nack pli
+a=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f
+a=rtpmap:109 rtx/90000
+a=fmtp:109 apt=108
+a=rtpmap:124 H264/90000
+a=rtcp-fb:124 goog-remb
+a=rtcp-fb:124 transport-cc
+a=rtcp-fb:124 ccm fir
+a=rtcp-fb:124 nack
+a=rtcp-fb:124 nack pli
+a=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032
+a=rtpmap:119 rtx/90000
+a=fmtp:119 apt=124
+a=rtpmap:123 H264/90000
+a=rtcp-fb:123 goog-remb
+a=rtcp-fb:123 transport-cc
+a=rtcp-fb:123 ccm fir
+a=rtcp-fb:123 nack
+a=rtcp-fb:123 nack pli
+a=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032
+a=rtpmap:118 rtx/90000
+a=fmtp:118 apt=123
+a=rtpmap:114 red/90000
+a=rtpmap:115 rtx/90000
+a=fmtp:115 apt=114
+a=rtpmap:116 ulpfec/90000
+a=ssrc-group:FID 955241346 1846364400
+a=ssrc:955241346 cname:2z0hRDVoFiLQp+in
+a=ssrc:955241346 msid:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC 78cfb4a8-f190-4437-b586-1aa438902783
+a=ssrc:955241346 mslabel:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC
+a=ssrc:955241346 label:78cfb4a8-f190-4437-b586-1aa438902783
+a=ssrc:1846364400 cname:2z0hRDVoFiLQp+in
+a=ssrc:1846364400 msid:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC 78cfb4a8-f190-4437-b586-1aa438902783
+a=ssrc:1846364400 mslabel:NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC
+a=ssrc:1846364400 label:78cfb4a8-f190-4437-b586-1aa438902783
+
+2020-10-30 21:49:43.236  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : PARTICIPANT first: configuring loopback
+2020-10-30 21:49:43.321  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : USER first: SdpAnswer for first is v=0
+o=- 3813108583 3813108583 IN IP4 0.0.0.0
+s=Kurento Media Server
+c=IN IP4 0.0.0.0
+t=0 0
+a=msid-semantic: WMS NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC
+a=group:BUNDLE 0 1
+m=audio 1 UDP/TLS/RTP/SAVPF 111 0
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=sendrecv
+a=mid:0
+a=rtcp:9 IN IP4 0.0.0.0
+a=rtpmap:111 opus/48000/2
+a=rtpmap:0 PCMU/8000
+a=setup:active
+a=rtcp-mux
+a=fmtp:111 minptime=10;useinbandfec=1
+a=ssrc:121426159 cname:user2493049234@host-8930a057
+a=ice-ufrag:lCUV
+a=ice-pwd:VwJ2ILG2rfezUF/C9GOnAL
+a=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A
+m=video 1 UDP/TLS/RTP/SAVPF 96 102 127 125 108 124 123
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=sendrecv
+a=mid:1
+a=rtcp:9 IN IP4 0.0.0.0
+a=rtpmap:96 VP8/90000
+a=rtpmap:102 H264/90000
+a=rtpmap:127 H264/90000
+a=rtpmap:125 H264/90000
+a=rtpmap:108 H264/90000
+a=rtpmap:124 H264/90000
+a=rtpmap:123 H264/90000
+a=rtcp-fb:96 goog-remb
+a=rtcp-fb:96 ccm fir
+a=rtcp-fb:96 nack
+a=rtcp-fb:96 nack pli
+a=rtcp-fb:102 goog-remb
+a=rtcp-fb:102 ccm fir
+a=rtcp-fb:102 nack
+a=rtcp-fb:102 nack pli
+a=rtcp-fb:127 goog-remb
+a=rtcp-fb:127 ccm fir
+a=rtcp-fb:127 nack
+a=rtcp-fb:127 nack pli
+a=rtcp-fb:125 goog-remb
+a=rtcp-fb:125 ccm fir
+a=rtcp-fb:125 nack
+a=rtcp-fb:125 nack pli
+a=rtcp-fb:108 goog-remb
+a=rtcp-fb:108 ccm fir
+a=rtcp-fb:108 nack
+a=rtcp-fb:108 nack pli
+a=rtcp-fb:124 goog-remb
+a=rtcp-fb:124 ccm fir
+a=rtcp-fb:124 nack
+a=rtcp-fb:124 nack pli
+a=rtcp-fb:123 goog-remb
+a=rtcp-fb:123 ccm fir
+a=rtcp-fb:123 nack
+a=rtcp-fb:123 nack pli
+a=setup:active
+a=rtcp-mux
+a=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f
+a=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f
+a=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f
+a=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f
+a=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032
+a=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032
+a=ssrc:3245004620 cname:user2493049234@host-8930a057
+a=ice-ufrag:lCUV
+a=ice-pwd:VwJ2ILG2rfezUF/C9GOnAL
+a=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A
+
+2020-10-30 21:49:43.321  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : USER first: Sending message {"id":"receiveVideoAnswer","name":"first","sdpAnswer":"v=0\r\no=- 3813108583 3813108583 IN IP4 0.0.0.0\r\ns=Kurento Media Server\r\nc=IN IP4 0.0.0.0\r\nt=0 0\r\na=msid-semantic: WMS NIiH8zcuKZWbj5zGFPAKgn3arV6QI185rtjC\r\na=group:BUNDLE 0 1\r\nm=audio 1 UDP/TLS/RTP/SAVPF 111 0\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=sendrecv\r\na=mid:0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtpmap:111 opus/48000/2\r\na=rtpmap:0 PCMU/8000\r\na=setup:active\r\na=rtcp-mux\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=ssrc:121426159 cname:user2493049234@host-8930a057\r\na=ice-ufrag:lCUV\r\na=ice-pwd:VwJ2ILG2rfezUF/C9GOnAL\r\na=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A\r\nm=video 1 UDP/TLS/RTP/SAVPF 96 102 127 125 108 124 123\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=sendrecv\r\na=mid:1\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtpmap:96 VP8/90000\r\na=rtpmap:102 H264/90000\r\na=rtpmap:127 H264/90000\r\na=rtpmap:125 H264/90000\r\na=rtpmap:108 H264/90000\r\na=rtpmap:124 H264/90000\r\na=rtpmap:123 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=rtcp-fb:127 goog-remb\r\na=rtcp-fb:127 ccm fir\r\na=rtcp-fb:127 nack\r\na=rtcp-fb:127 nack pli\r\na=rtcp-fb:125 goog-remb\r\na=rtcp-fb:125 ccm fir\r\na=rtcp-fb:125 nack\r\na=rtcp-fb:125 nack pli\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=rtcp-fb:124 goog-remb\r\na=rtcp-fb:124 ccm fir\r\na=rtcp-fb:124 nack\r\na=rtcp-fb:124 nack pli\r\na=rtcp-fb:123 goog-remb\r\na=rtcp-fb:123 ccm fir\r\na=rtcp-fb:123 nack\r\na=rtcp-fb:123 nack pli\r\na=setup:active\r\na=rtcp-mux\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032\r\na=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032\r\na=ssrc:3245004620 cname:user2493049234@host-8930a057\r\na=ice-ufrag:lCUV\r\na=ice-pwd:VwJ2ILG2rfezUF/C9GOnAL\r\na=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A\r\n"}
+2020-10-30 21:49:43.323  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : gather candidates
+2020-10-30 21:49:43.323  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : PARTICIPANT first: configuring loopback
+2020-10-30 21:49:43.407  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:3358000529 1 udp 2122260223 192.168.86.21 56437 typ host generation 0 ufrag PmX2 network-id 1 network-cost 10","sdpMid":"0","sdpMLineIndex":0},"name":"first"}
+2020-10-30 21:49:43.408  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is first
+2020-10-30 21:49:43.449  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:2385519367 1 udp 2122194687 11.112.195.143 57836 typ host generation 0 ufrag PmX2 network-id 2 network-cost 50","sdpMid":"0","sdpMLineIndex":0},"name":"first"}
+2020-10-30 21:49:43.449  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is first
+2020-10-30 21:49:43.488  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:3358000529 1 udp 2122260223 192.168.86.21 54781 typ host generation 0 ufrag PmX2 network-id 1 network-cost 10","sdpMid":"1","sdpMLineIndex":1},"name":"first"}
+2020-10-30 21:49:43.489  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is first
+2020-10-30 21:49:43.531  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:2385519367 1 udp 2122194687 11.112.195.143 52917 typ host generation 0 ufrag PmX2 network-id 2 network-cost 50","sdpMid":"1","sdpMLineIndex":1},"name":"first"}
+2020-10-30 21:49:43.531  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is first
+2020-10-30 21:49:43.571  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:2258958689 1 tcp 1518280447 192.168.86.21 9 typ host tcptype active generation 0 ufrag PmX2 network-id 1 network-cost 10","sdpMid":"0","sdpMLineIndex":0},"name":"first"}
+2020-10-30 21:49:43.571  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is first
+2020-10-30 21:49:43.601  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:3233013751 1 tcp 1518214911 11.112.195.143 9 typ host tcptype active generation 0 ufrag PmX2 network-id 2 network-cost 50","sdpMid":"0","sdpMLineIndex":0},"name":"first"}
+2020-10-30 21:49:43.602  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is first
+2020-10-30 21:49:43.647  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:1232012069 1 udp 1686052607 73.140.221.12 56437 typ srflx raddr 192.168.86.21 rport 56437 generation 0 ufrag PmX2 network-id 1 network-cost 10","sdpMid":"0","sdpMLineIndex":0},"name":"first"}
+2020-10-30 21:49:43.648  INFO 30078 --- [nio-8443-exec-6] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is first
+2020-10-30 21:49:47.488  INFO 30078 --- [nio-8443-exec-9] o.k.tutorial.groupcall.CallHandler       : Incoming message from new user: {"id":"joinRoom","name":"second","room":"M1"}
+2020-10-30 21:49:47.488  INFO 30078 --- [nio-8443-exec-9] o.k.tutorial.groupcall.CallHandler       : PARTICIPANT second: trying to join room M1
+2020-10-30 21:49:47.488  INFO 30078 --- [nio-8443-exec-9] org.kurento.tutorial.groupcall.Room      : ROOM M1: adding participant second
+2020-10-30 21:49:47.557  INFO 30078 --- [nio-8443-exec-9] org.kurento.tutorial.groupcall.Room      : ROOM M1: notifying other participants of new participant second
+2020-10-30 21:49:47.557  INFO 30078 --- [nio-8443-exec-9] o.k.tutorial.groupcall.UserSession       : USER first: Sending message {"id":"newParticipantArrived","name":"second"}
+2020-10-30 21:49:47.557  INFO 30078 --- [nio-8443-exec-9] org.kurento.tutorial.groupcall.Room      : PARTICIPANT second: sending a list of 1 participants
+2020-10-30 21:49:47.558  INFO 30078 --- [nio-8443-exec-9] o.k.tutorial.groupcall.UserSession       : USER second: Sending message {"id":"existingParticipants","data":["first"]}
+2020-10-30 21:49:47.702  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"receiveVideoFrom","sender":"second","sdpOffer":"v=0\r\no=- 2529307935428549534 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=msid-semantic: WMS amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 104 9 0 8 106 105 13 110 112 113 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:6ne0\r\na=ice-pwd:WFQzNZ/R2B6frOPEJWLAJZz5\r\na=ice-options:trickle\r\na=fingerprint:sha-256 B4:E5:45:3B:7E:46:74:AA:54:24:31:58:CE:21:D3:10:80:CE:9B:4E:7E:0A:E1:40:E0:C9:AE:42:67:3C:59:28\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendrecv\r\na=msid:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8 f6fd0fe8-e99e-4d7b-a06e-07373ebed801\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:104 ISAC/32000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:106 CN/32000\r\na=rtpmap:105 CN/16000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:112 telephone-event/32000\r\na=rtpmap:113 telephone-event/16000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:763939027 cname:toPbIYYGsXpot8wa\r\na=ssrc:763939027 msid:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8 f6fd0fe8-e99e-4d7b-a06e-07373ebed801\r\na=ssrc:763939027 mslabel:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8\r\na=ssrc:763939027 label:f6fd0fe8-e99e-4d7b-a06e-07373ebed801\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100 101 102 121 127 120 125 107 108 109 124 119 123 118 114 115 116\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:6ne0\r\na=ice-pwd:WFQzNZ/R2B6frOPEJWLAJZz5\r\na=ice-options:trickle\r\na=fingerprint:sha-256 B4:E5:45:3B:7E:46:74:AA:54:24:31:58:CE:21:D3:10:80:CE:9B:4E:7E:0A:E1:40:E0:C9:AE:42:67:3C:59:28\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:12 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:11 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendrecv\r\na=msid:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8 fefd29ab-f8e9-433f-bba6-8abf001b6e1f\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:121 rtx/90000\r\na=fmtp:121 apt=102\r\na=rtpmap:127 H264/90000\r\na=rtcp-fb:127 goog-remb\r\na=rtcp-fb:127 transport-cc\r\na=rtcp-fb:127 ccm fir\r\na=rtcp-fb:127 nack\r\na=rtcp-fb:127 nack pli\r\na=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:120 rtx/90000\r\na=fmtp:120 apt=127\r\na=rtpmap:125 H264/90000\r\na=rtcp-fb:125 goog-remb\r\na=rtcp-fb:125 transport-cc\r\na=rtcp-fb:125 ccm fir\r\na=rtcp-fb:125 nack\r\na=rtcp-fb:125 nack pli\r\na=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=125\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:124 H264/90000\r\na=rtcp-fb:124 goog-remb\r\na=rtcp-fb:124 transport-cc\r\na=rtcp-fb:124 ccm fir\r\na=rtcp-fb:124 nack\r\na=rtcp-fb:124 nack pli\r\na=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=124\r\na=rtpmap:123 H264/90000\r\na=rtcp-fb:123 goog-remb\r\na=rtcp-fb:123 transport-cc\r\na=rtcp-fb:123 ccm fir\r\na=rtcp-fb:123 nack\r\na=rtcp-fb:123 nack pli\r\na=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032\r\na=rtpmap:118 rtx/90000\r\na=fmtp:118 apt=123\r\na=rtpmap:114 red/90000\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 ulpfec/90000\r\na=ssrc-group:FID 1834707392 449041984\r\na=ssrc:1834707392 cname:toPbIYYGsXpot8wa\r\na=ssrc:1834707392 msid:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8 fefd29ab-f8e9-433f-bba6-8abf001b6e1f\r\na=ssrc:1834707392 mslabel:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8\r\na=ssrc:1834707392 label:fefd29ab-f8e9-433f-bba6-8abf001b6e1f\r\na=ssrc:449041984 cname:toPbIYYGsXpot8wa\r\na=ssrc:449041984 msid:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8 fefd29ab-f8e9-433f-bba6-8abf001b6e1f\r\na=ssrc:449041984 mslabel:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8\r\na=ssrc:449041984 label:fefd29ab-f8e9-433f-bba6-8abf001b6e1f\r\n"}
+2020-10-30 21:49:47.703  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: connecting with second in room M1
+2020-10-30 21:49:47.704  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: SdpOffer for second is v=0
+o=- 2529307935428549534 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE 0 1
+a=msid-semantic: WMS amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8
+m=audio 9 UDP/TLS/RTP/SAVPF 111 103 104 9 0 8 106 105 13 110 112 113 126
+c=IN IP4 0.0.0.0
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:6ne0
+a=ice-pwd:WFQzNZ/R2B6frOPEJWLAJZz5
+a=ice-options:trickle
+a=fingerprint:sha-256 B4:E5:45:3B:7E:46:74:AA:54:24:31:58:CE:21:D3:10:80:CE:9B:4E:7E:0A:E1:40:E0:C9:AE:42:67:3C:59:28
+a=setup:actpass
+a=mid:0
+a=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01
+a=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid
+a=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id
+a=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id
+a=sendrecv
+a=msid:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8 f6fd0fe8-e99e-4d7b-a06e-07373ebed801
+a=rtcp-mux
+a=rtpmap:111 opus/48000/2
+a=rtcp-fb:111 transport-cc
+a=fmtp:111 minptime=10;useinbandfec=1
+a=rtpmap:103 ISAC/16000
+a=rtpmap:104 ISAC/32000
+a=rtpmap:9 G722/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:106 CN/32000
+a=rtpmap:105 CN/16000
+a=rtpmap:13 CN/8000
+a=rtpmap:110 telephone-event/48000
+a=rtpmap:112 telephone-event/32000
+a=rtpmap:113 telephone-event/16000
+a=rtpmap:126 telephone-event/8000
+a=ssrc:763939027 cname:toPbIYYGsXpot8wa
+a=ssrc:763939027 msid:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8 f6fd0fe8-e99e-4d7b-a06e-07373ebed801
+a=ssrc:763939027 mslabel:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8
+a=ssrc:763939027 label:f6fd0fe8-e99e-4d7b-a06e-07373ebed801
+m=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100 101 102 121 127 120 125 107 108 109 124 119 123 118 114 115 116
+c=IN IP4 0.0.0.0
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:6ne0
+a=ice-pwd:WFQzNZ/R2B6frOPEJWLAJZz5
+a=ice-options:trickle
+a=fingerprint:sha-256 B4:E5:45:3B:7E:46:74:AA:54:24:31:58:CE:21:D3:10:80:CE:9B:4E:7E:0A:E1:40:E0:C9:AE:42:67:3C:59:28
+a=setup:actpass
+a=mid:1
+a=extmap:14 urn:ietf:params:rtp-hdrext:toffset
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=extmap:13 urn:3gpp:video-orientation
+a=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01
+a=extmap:12 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay
+a=extmap:11 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type
+a=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing
+a=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space
+a=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid
+a=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id
+a=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id
+a=sendrecv
+a=msid:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8 fefd29ab-f8e9-433f-bba6-8abf001b6e1f
+a=rtcp-mux
+a=rtcp-rsize
+a=rtpmap:96 VP8/90000
+a=rtcp-fb:96 goog-remb
+a=rtcp-fb:96 transport-cc
+a=rtcp-fb:96 ccm fir
+a=rtcp-fb:96 nack
+a=rtcp-fb:96 nack pli
+a=rtpmap:97 rtx/90000
+a=fmtp:97 apt=96
+a=rtpmap:98 VP9/90000
+a=rtcp-fb:98 goog-remb
+a=rtcp-fb:98 transport-cc
+a=rtcp-fb:98 ccm fir
+a=rtcp-fb:98 nack
+a=rtcp-fb:98 nack pli
+a=fmtp:98 profile-id=0
+a=rtpmap:99 rtx/90000
+a=fmtp:99 apt=98
+a=rtpmap:100 VP9/90000
+a=rtcp-fb:100 goog-remb
+a=rtcp-fb:100 transport-cc
+a=rtcp-fb:100 ccm fir
+a=rtcp-fb:100 nack
+a=rtcp-fb:100 nack pli
+a=fmtp:100 profile-id=2
+a=rtpmap:101 rtx/90000
+a=fmtp:101 apt=100
+a=rtpmap:102 H264/90000
+a=rtcp-fb:102 goog-remb
+a=rtcp-fb:102 transport-cc
+a=rtcp-fb:102 ccm fir
+a=rtcp-fb:102 nack
+a=rtcp-fb:102 nack pli
+a=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f
+a=rtpmap:121 rtx/90000
+a=fmtp:121 apt=102
+a=rtpmap:127 H264/90000
+a=rtcp-fb:127 goog-remb
+a=rtcp-fb:127 transport-cc
+a=rtcp-fb:127 ccm fir
+a=rtcp-fb:127 nack
+a=rtcp-fb:127 nack pli
+a=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f
+a=rtpmap:120 rtx/90000
+a=fmtp:120 apt=127
+a=rtpmap:125 H264/90000
+a=rtcp-fb:125 goog-remb
+a=rtcp-fb:125 transport-cc
+a=rtcp-fb:125 ccm fir
+a=rtcp-fb:125 nack
+a=rtcp-fb:125 nack pli
+a=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f
+a=rtpmap:107 rtx/90000
+a=fmtp:107 apt=125
+a=rtpmap:108 H264/90000
+a=rtcp-fb:108 goog-remb
+a=rtcp-fb:108 transport-cc
+a=rtcp-fb:108 ccm fir
+a=rtcp-fb:108 nack
+a=rtcp-fb:108 nack pli
+a=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f
+a=rtpmap:109 rtx/90000
+a=fmtp:109 apt=108
+a=rtpmap:124 H264/90000
+a=rtcp-fb:124 goog-remb
+a=rtcp-fb:124 transport-cc
+a=rtcp-fb:124 ccm fir
+a=rtcp-fb:124 nack
+a=rtcp-fb:124 nack pli
+a=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032
+a=rtpmap:119 rtx/90000
+a=fmtp:119 apt=124
+a=rtpmap:123 H264/90000
+a=rtcp-fb:123 goog-remb
+a=rtcp-fb:123 transport-cc
+a=rtcp-fb:123 ccm fir
+a=rtcp-fb:123 nack
+a=rtcp-fb:123 nack pli
+a=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032
+a=rtpmap:118 rtx/90000
+a=fmtp:118 apt=123
+a=rtpmap:114 red/90000
+a=rtpmap:115 rtx/90000
+a=fmtp:115 apt=114
+a=rtpmap:116 ulpfec/90000
+a=ssrc-group:FID 1834707392 449041984
+a=ssrc:1834707392 cname:toPbIYYGsXpot8wa
+a=ssrc:1834707392 msid:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8 fefd29ab-f8e9-433f-bba6-8abf001b6e1f
+a=ssrc:1834707392 mslabel:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8
+a=ssrc:1834707392 label:fefd29ab-f8e9-433f-bba6-8abf001b6e1f
+a=ssrc:449041984 cname:toPbIYYGsXpot8wa
+a=ssrc:449041984 msid:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8 fefd29ab-f8e9-433f-bba6-8abf001b6e1f
+a=ssrc:449041984 mslabel:amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8
+a=ssrc:449041984 label:fefd29ab-f8e9-433f-bba6-8abf001b6e1f
+
+2020-10-30 21:49:47.705  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : PARTICIPANT first: receiving video from second
+2020-10-30 21:49:47.705  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : PARTICIPANT first: creating new endpoint for second
+2020-10-30 21:49:47.762  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'second': {"id":"receiveVideoFrom","sender":"second","sdpOffer":"v=0\r\no=- 3630386991999917054 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=msid-semantic: WMS VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 104 9 0 8 106 105 13 110 112 113 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:kA1e\r\na=ice-pwd:IKi/+qJ3hh5PUOQ/+uKHNRvE\r\na=ice-options:trickle\r\na=fingerprint:sha-256 CC:AE:AC:1B:54:98:22:8B:53:18:30:B8:3F:E2:CE:71:CC:40:8D:45:CC:21:05:67:CD:30:8C:B4:63:F7:C7:77\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendrecv\r\na=msid:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7 0eb16006-6879-45b0-b7e6-48f2eb2e3ad1\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:104 ISAC/32000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:106 CN/32000\r\na=rtpmap:105 CN/16000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:112 telephone-event/32000\r\na=rtpmap:113 telephone-event/16000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:841855276 cname:hRS6KPSPZU7THi7N\r\na=ssrc:841855276 msid:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7 0eb16006-6879-45b0-b7e6-48f2eb2e3ad1\r\na=ssrc:841855276 mslabel:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7\r\na=ssrc:841855276 label:0eb16006-6879-45b0-b7e6-48f2eb2e3ad1\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100 101 102 121 127 120 125 107 108 109 124 119 123 118 114 115 116\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:kA1e\r\na=ice-pwd:IKi/+qJ3hh5PUOQ/+uKHNRvE\r\na=ice-options:trickle\r\na=fingerprint:sha-256 CC:AE:AC:1B:54:98:22:8B:53:18:30:B8:3F:E2:CE:71:CC:40:8D:45:CC:21:05:67:CD:30:8C:B4:63:F7:C7:77\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:12 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:11 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendrecv\r\na=msid:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7 d845b662-5a07-471e-b5d6-131a756f69d4\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:121 rtx/90000\r\na=fmtp:121 apt=102\r\na=rtpmap:127 H264/90000\r\na=rtcp-fb:127 goog-remb\r\na=rtcp-fb:127 transport-cc\r\na=rtcp-fb:127 ccm fir\r\na=rtcp-fb:127 nack\r\na=rtcp-fb:127 nack pli\r\na=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:120 rtx/90000\r\na=fmtp:120 apt=127\r\na=rtpmap:125 H264/90000\r\na=rtcp-fb:125 goog-remb\r\na=rtcp-fb:125 transport-cc\r\na=rtcp-fb:125 ccm fir\r\na=rtcp-fb:125 nack\r\na=rtcp-fb:125 nack pli\r\na=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=125\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:124 H264/90000\r\na=rtcp-fb:124 goog-remb\r\na=rtcp-fb:124 transport-cc\r\na=rtcp-fb:124 ccm fir\r\na=rtcp-fb:124 nack\r\na=rtcp-fb:124 nack pli\r\na=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=124\r\na=rtpmap:123 H264/90000\r\na=rtcp-fb:123 goog-remb\r\na=rtcp-fb:123 transport-cc\r\na=rtcp-fb:123 ccm fir\r\na=rtcp-fb:123 nack\r\na=rtcp-fb:123 nack pli\r\na=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032\r\na=rtpmap:118 rtx/90000\r\na=fmtp:118 apt=123\r\na=rtpmap:114 red/90000\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 ulpfec/90000\r\na=ssrc-group:FID 1249449854 2469359395\r\na=ssrc:1249449854 cname:hRS6KPSPZU7THi7N\r\na=ssrc:1249449854 msid:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7 d845b662-5a07-471e-b5d6-131a756f69d4\r\na=ssrc:1249449854 mslabel:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7\r\na=ssrc:1249449854 label:d845b662-5a07-471e-b5d6-131a756f69d4\r\na=ssrc:2469359395 cname:hRS6KPSPZU7THi7N\r\na=ssrc:2469359395 msid:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7 d845b662-5a07-471e-b5d6-131a756f69d4\r\na=ssrc:2469359395 mslabel:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7\r\na=ssrc:2469359395 label:d845b662-5a07-471e-b5d6-131a756f69d4\r\n"}
+2020-10-30 21:49:47.762  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: connecting with second in room M1
+2020-10-30 21:49:47.762  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: SdpOffer for second is v=0
+o=- 3630386991999917054 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE 0 1
+a=msid-semantic: WMS VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7
+m=audio 9 UDP/TLS/RTP/SAVPF 111 103 104 9 0 8 106 105 13 110 112 113 126
+c=IN IP4 0.0.0.0
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:kA1e
+a=ice-pwd:IKi/+qJ3hh5PUOQ/+uKHNRvE
+a=ice-options:trickle
+a=fingerprint:sha-256 CC:AE:AC:1B:54:98:22:8B:53:18:30:B8:3F:E2:CE:71:CC:40:8D:45:CC:21:05:67:CD:30:8C:B4:63:F7:C7:77
+a=setup:actpass
+a=mid:0
+a=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01
+a=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid
+a=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id
+a=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id
+a=sendrecv
+a=msid:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7 0eb16006-6879-45b0-b7e6-48f2eb2e3ad1
+a=rtcp-mux
+a=rtpmap:111 opus/48000/2
+a=rtcp-fb:111 transport-cc
+a=fmtp:111 minptime=10;useinbandfec=1
+a=rtpmap:103 ISAC/16000
+a=rtpmap:104 ISAC/32000
+a=rtpmap:9 G722/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:106 CN/32000
+a=rtpmap:105 CN/16000
+a=rtpmap:13 CN/8000
+a=rtpmap:110 telephone-event/48000
+a=rtpmap:112 telephone-event/32000
+a=rtpmap:113 telephone-event/16000
+a=rtpmap:126 telephone-event/8000
+a=ssrc:841855276 cname:hRS6KPSPZU7THi7N
+a=ssrc:841855276 msid:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7 0eb16006-6879-45b0-b7e6-48f2eb2e3ad1
+a=ssrc:841855276 mslabel:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7
+a=ssrc:841855276 label:0eb16006-6879-45b0-b7e6-48f2eb2e3ad1
+m=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100 101 102 121 127 120 125 107 108 109 124 119 123 118 114 115 116
+c=IN IP4 0.0.0.0
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:kA1e
+a=ice-pwd:IKi/+qJ3hh5PUOQ/+uKHNRvE
+a=ice-options:trickle
+a=fingerprint:sha-256 CC:AE:AC:1B:54:98:22:8B:53:18:30:B8:3F:E2:CE:71:CC:40:8D:45:CC:21:05:67:CD:30:8C:B4:63:F7:C7:77
+a=setup:actpass
+a=mid:1
+a=extmap:14 urn:ietf:params:rtp-hdrext:toffset
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=extmap:13 urn:3gpp:video-orientation
+a=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01
+a=extmap:12 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay
+a=extmap:11 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type
+a=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing
+a=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space
+a=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid
+a=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id
+a=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id
+a=sendrecv
+a=msid:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7 d845b662-5a07-471e-b5d6-131a756f69d4
+a=rtcp-mux
+a=rtcp-rsize
+a=rtpmap:96 VP8/90000
+a=rtcp-fb:96 goog-remb
+a=rtcp-fb:96 transport-cc
+a=rtcp-fb:96 ccm fir
+a=rtcp-fb:96 nack
+a=rtcp-fb:96 nack pli
+a=rtpmap:97 rtx/90000
+a=fmtp:97 apt=96
+a=rtpmap:98 VP9/90000
+a=rtcp-fb:98 goog-remb
+a=rtcp-fb:98 transport-cc
+a=rtcp-fb:98 ccm fir
+a=rtcp-fb:98 nack
+a=rtcp-fb:98 nack pli
+a=fmtp:98 profile-id=0
+a=rtpmap:99 rtx/90000
+a=fmtp:99 apt=98
+a=rtpmap:100 VP9/90000
+a=rtcp-fb:100 goog-remb
+a=rtcp-fb:100 transport-cc
+a=rtcp-fb:100 ccm fir
+a=rtcp-fb:100 nack
+a=rtcp-fb:100 nack pli
+a=fmtp:100 profile-id=2
+a=rtpmap:101 rtx/90000
+a=fmtp:101 apt=100
+a=rtpmap:102 H264/90000
+a=rtcp-fb:102 goog-remb
+a=rtcp-fb:102 transport-cc
+a=rtcp-fb:102 ccm fir
+a=rtcp-fb:102 nack
+a=rtcp-fb:102 nack pli
+a=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f
+a=rtpmap:121 rtx/90000
+a=fmtp:121 apt=102
+a=rtpmap:127 H264/90000
+a=rtcp-fb:127 goog-remb
+a=rtcp-fb:127 transport-cc
+a=rtcp-fb:127 ccm fir
+a=rtcp-fb:127 nack
+a=rtcp-fb:127 nack pli
+a=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f
+a=rtpmap:120 rtx/90000
+a=fmtp:120 apt=127
+a=rtpmap:125 H264/90000
+a=rtcp-fb:125 goog-remb
+a=rtcp-fb:125 transport-cc
+a=rtcp-fb:125 ccm fir
+a=rtcp-fb:125 nack
+a=rtcp-fb:125 nack pli
+a=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f
+a=rtpmap:107 rtx/90000
+a=fmtp:107 apt=125
+a=rtpmap:108 H264/90000
+a=rtcp-fb:108 goog-remb
+a=rtcp-fb:108 transport-cc
+a=rtcp-fb:108 ccm fir
+a=rtcp-fb:108 nack
+a=rtcp-fb:108 nack pli
+a=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f
+a=rtpmap:109 rtx/90000
+a=fmtp:109 apt=108
+a=rtpmap:124 H264/90000
+a=rtcp-fb:124 goog-remb
+a=rtcp-fb:124 transport-cc
+a=rtcp-fb:124 ccm fir
+a=rtcp-fb:124 nack
+a=rtcp-fb:124 nack pli
+a=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032
+a=rtpmap:119 rtx/90000
+a=fmtp:119 apt=124
+a=rtpmap:123 H264/90000
+a=rtcp-fb:123 goog-remb
+a=rtcp-fb:123 transport-cc
+a=rtcp-fb:123 ccm fir
+a=rtcp-fb:123 nack
+a=rtcp-fb:123 nack pli
+a=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032
+a=rtpmap:118 rtx/90000
+a=fmtp:118 apt=123
+a=rtpmap:114 red/90000
+a=rtpmap:115 rtx/90000
+a=fmtp:115 apt=114
+a=rtpmap:116 ulpfec/90000
+a=ssrc-group:FID 1249449854 2469359395
+a=ssrc:1249449854 cname:hRS6KPSPZU7THi7N
+a=ssrc:1249449854 msid:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7 d845b662-5a07-471e-b5d6-131a756f69d4
+a=ssrc:1249449854 mslabel:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7
+a=ssrc:1249449854 label:d845b662-5a07-471e-b5d6-131a756f69d4
+a=ssrc:2469359395 cname:hRS6KPSPZU7THi7N
+a=ssrc:2469359395 msid:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7 d845b662-5a07-471e-b5d6-131a756f69d4
+a=ssrc:2469359395 mslabel:VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7
+a=ssrc:2469359395 label:d845b662-5a07-471e-b5d6-131a756f69d4
+
+2020-10-30 21:49:47.762  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : PARTICIPANT second: configuring loopback
+2020-10-30 21:49:47.782  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : PARTICIPANT first: obtained endpoint for second
+2020-10-30 21:49:47.805  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: SdpAnswer for second is v=0
+o=- 3813108587 3813108587 IN IP4 0.0.0.0
+s=Kurento Media Server
+c=IN IP4 0.0.0.0
+t=0 0
+a=msid-semantic: WMS VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7
+a=group:BUNDLE 0 1
+m=audio 1 UDP/TLS/RTP/SAVPF 111 0
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=sendrecv
+a=mid:0
+a=rtcp:9 IN IP4 0.0.0.0
+a=rtpmap:111 opus/48000/2
+a=rtpmap:0 PCMU/8000
+a=setup:active
+a=rtcp-mux
+a=fmtp:111 minptime=10;useinbandfec=1
+a=ssrc:749322397 cname:user3699170202@host-40e06323
+a=ice-ufrag:XDLV
+a=ice-pwd:i5Qr9fXdUFJer/DPzLMRsq
+a=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A
+m=video 1 UDP/TLS/RTP/SAVPF 96 102 127 125 108 124 123
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=sendrecv
+a=mid:1
+a=rtcp:9 IN IP4 0.0.0.0
+a=rtpmap:96 VP8/90000
+a=rtpmap:102 H264/90000
+a=rtpmap:127 H264/90000
+a=rtpmap:125 H264/90000
+a=rtpmap:108 H264/90000
+a=rtpmap:124 H264/90000
+a=rtpmap:123 H264/90000
+a=rtcp-fb:96 goog-remb
+a=rtcp-fb:96 ccm fir
+a=rtcp-fb:96 nack
+a=rtcp-fb:96 nack pli
+a=rtcp-fb:102 goog-remb
+a=rtcp-fb:102 ccm fir
+a=rtcp-fb:102 nack
+a=rtcp-fb:102 nack pli
+a=rtcp-fb:127 goog-remb
+a=rtcp-fb:127 ccm fir
+a=rtcp-fb:127 nack
+a=rtcp-fb:127 nack pli
+a=rtcp-fb:125 goog-remb
+a=rtcp-fb:125 ccm fir
+a=rtcp-fb:125 nack
+a=rtcp-fb:125 nack pli
+a=rtcp-fb:108 goog-remb
+a=rtcp-fb:108 ccm fir
+a=rtcp-fb:108 nack
+a=rtcp-fb:108 nack pli
+a=rtcp-fb:124 goog-remb
+a=rtcp-fb:124 ccm fir
+a=rtcp-fb:124 nack
+a=rtcp-fb:124 nack pli
+a=rtcp-fb:123 goog-remb
+a=rtcp-fb:123 ccm fir
+a=rtcp-fb:123 nack
+a=rtcp-fb:123 nack pli
+a=setup:active
+a=rtcp-mux
+a=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f
+a=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f
+a=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f
+a=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f
+a=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032
+a=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032
+a=ssrc:1891642930 cname:user3699170202@host-40e06323
+a=ice-ufrag:XDLV
+a=ice-pwd:i5Qr9fXdUFJer/DPzLMRsq
+a=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A
+
+2020-10-30 21:49:47.805  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: Sending message {"id":"receiveVideoAnswer","name":"second","sdpAnswer":"v=0\r\no=- 3813108587 3813108587 IN IP4 0.0.0.0\r\ns=Kurento Media Server\r\nc=IN IP4 0.0.0.0\r\nt=0 0\r\na=msid-semantic: WMS VnjNNbxQxz40dTMePJrNcTqRPhNG3dtuBmM7\r\na=group:BUNDLE 0 1\r\nm=audio 1 UDP/TLS/RTP/SAVPF 111 0\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=sendrecv\r\na=mid:0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtpmap:111 opus/48000/2\r\na=rtpmap:0 PCMU/8000\r\na=setup:active\r\na=rtcp-mux\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=ssrc:749322397 cname:user3699170202@host-40e06323\r\na=ice-ufrag:XDLV\r\na=ice-pwd:i5Qr9fXdUFJer/DPzLMRsq\r\na=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A\r\nm=video 1 UDP/TLS/RTP/SAVPF 96 102 127 125 108 124 123\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=sendrecv\r\na=mid:1\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtpmap:96 VP8/90000\r\na=rtpmap:102 H264/90000\r\na=rtpmap:127 H264/90000\r\na=rtpmap:125 H264/90000\r\na=rtpmap:108 H264/90000\r\na=rtpmap:124 H264/90000\r\na=rtpmap:123 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=rtcp-fb:127 goog-remb\r\na=rtcp-fb:127 ccm fir\r\na=rtcp-fb:127 nack\r\na=rtcp-fb:127 nack pli\r\na=rtcp-fb:125 goog-remb\r\na=rtcp-fb:125 ccm fir\r\na=rtcp-fb:125 nack\r\na=rtcp-fb:125 nack pli\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=rtcp-fb:124 goog-remb\r\na=rtcp-fb:124 ccm fir\r\na=rtcp-fb:124 nack\r\na=rtcp-fb:124 nack pli\r\na=rtcp-fb:123 goog-remb\r\na=rtcp-fb:123 ccm fir\r\na=rtcp-fb:123 nack\r\na=rtcp-fb:123 nack pli\r\na=setup:active\r\na=rtcp-mux\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032\r\na=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032\r\na=ssrc:1891642930 cname:user3699170202@host-40e06323\r\na=ice-ufrag:XDLV\r\na=ice-pwd:i5Qr9fXdUFJer/DPzLMRsq\r\na=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A\r\n"}
+2020-10-30 21:49:47.807  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : gather candidates
+2020-10-30 21:49:47.807  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : PARTICIPANT second: configuring loopback
+2020-10-30 21:49:47.860  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: SdpAnswer for second is v=0
+o=- 3813108587 3813108587 IN IP4 0.0.0.0
+s=Kurento Media Server
+c=IN IP4 0.0.0.0
+t=0 0
+a=msid-semantic: WMS amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8
+a=group:BUNDLE 0 1
+m=audio 1 UDP/TLS/RTP/SAVPF 111 0
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=sendrecv
+a=mid:0
+a=rtcp:9 IN IP4 0.0.0.0
+a=rtpmap:111 opus/48000/2
+a=rtpmap:0 PCMU/8000
+a=setup:active
+a=rtcp-mux
+a=fmtp:111 minptime=10;useinbandfec=1
+a=ssrc:2719773158 cname:user3754156602@host-ddd8c16b
+a=ice-ufrag:llkp
+a=ice-pwd:3sdFmrUGSz2S13jfzFAAmi
+a=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A
+m=video 1 UDP/TLS/RTP/SAVPF 96 102 127 125 108 124 123
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=sendrecv
+a=mid:1
+a=rtcp:9 IN IP4 0.0.0.0
+a=rtpmap:96 VP8/90000
+a=rtpmap:102 H264/90000
+a=rtpmap:127 H264/90000
+a=rtpmap:125 H264/90000
+a=rtpmap:108 H264/90000
+a=rtpmap:124 H264/90000
+a=rtpmap:123 H264/90000
+a=rtcp-fb:96 goog-remb
+a=rtcp-fb:96 ccm fir
+a=rtcp-fb:96 nack
+a=rtcp-fb:96 nack pli
+a=rtcp-fb:102 goog-remb
+a=rtcp-fb:102 ccm fir
+a=rtcp-fb:102 nack
+a=rtcp-fb:102 nack pli
+a=rtcp-fb:127 goog-remb
+a=rtcp-fb:127 ccm fir
+a=rtcp-fb:127 nack
+a=rtcp-fb:127 nack pli
+a=rtcp-fb:125 goog-remb
+a=rtcp-fb:125 ccm fir
+a=rtcp-fb:125 nack
+a=rtcp-fb:125 nack pli
+a=rtcp-fb:108 goog-remb
+a=rtcp-fb:108 ccm fir
+a=rtcp-fb:108 nack
+a=rtcp-fb:108 nack pli
+a=rtcp-fb:124 goog-remb
+a=rtcp-fb:124 ccm fir
+a=rtcp-fb:124 nack
+a=rtcp-fb:124 nack pli
+a=rtcp-fb:123 goog-remb
+a=rtcp-fb:123 ccm fir
+a=rtcp-fb:123 nack
+a=rtcp-fb:123 nack pli
+a=setup:active
+a=rtcp-mux
+a=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f
+a=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f
+a=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f
+a=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f
+a=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032
+a=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032
+a=ssrc:225195360 cname:user3754156602@host-ddd8c16b
+a=ice-ufrag:llkp
+a=ice-pwd:3sdFmrUGSz2S13jfzFAAmi
+a=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A
+
+2020-10-30 21:49:47.860  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'second': {"id":"receiveVideoFrom","sender":"first","sdpOffer":"v=0\r\no=- 8307784813316724996 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=msid-semantic: WMS 0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 104 9 0 8 106 105 13 110 112 113 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:DL7u\r\na=ice-pwd:n02hbO10PSfjozb/uj1BYH7w\r\na=ice-options:trickle\r\na=fingerprint:sha-256 5E:2D:58:3E:21:14:06:1D:0C:E0:D9:6C:E2:84:70:51:0E:85:0D:E7:35:2C:EC:FA:D6:B7:0A:2B:7D:1A:E7:F2\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendrecv\r\na=msid:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB 571cf141-9b45-4d52-8a66-8e6dfd61b3c6\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:104 ISAC/32000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:106 CN/32000\r\na=rtpmap:105 CN/16000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:112 telephone-event/32000\r\na=rtpmap:113 telephone-event/16000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:1335059391 cname:h/i0LRsa4LHkeU9h\r\na=ssrc:1335059391 msid:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB 571cf141-9b45-4d52-8a66-8e6dfd61b3c6\r\na=ssrc:1335059391 mslabel:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB\r\na=ssrc:1335059391 label:571cf141-9b45-4d52-8a66-8e6dfd61b3c6\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100 101 102 121 127 120 125 107 108 109 124 119 123 118 114 115 116\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:DL7u\r\na=ice-pwd:n02hbO10PSfjozb/uj1BYH7w\r\na=ice-options:trickle\r\na=fingerprint:sha-256 5E:2D:58:3E:21:14:06:1D:0C:E0:D9:6C:E2:84:70:51:0E:85:0D:E7:35:2C:EC:FA:D6:B7:0A:2B:7D:1A:E7:F2\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:12 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:11 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendrecv\r\na=msid:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB 6ef84e28-2316-474b-8568-d30bd93532b2\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:121 rtx/90000\r\na=fmtp:121 apt=102\r\na=rtpmap:127 H264/90000\r\na=rtcp-fb:127 goog-remb\r\na=rtcp-fb:127 transport-cc\r\na=rtcp-fb:127 ccm fir\r\na=rtcp-fb:127 nack\r\na=rtcp-fb:127 nack pli\r\na=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:120 rtx/90000\r\na=fmtp:120 apt=127\r\na=rtpmap:125 H264/90000\r\na=rtcp-fb:125 goog-remb\r\na=rtcp-fb:125 transport-cc\r\na=rtcp-fb:125 ccm fir\r\na=rtcp-fb:125 nack\r\na=rtcp-fb:125 nack pli\r\na=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=125\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:124 H264/90000\r\na=rtcp-fb:124 goog-remb\r\na=rtcp-fb:124 transport-cc\r\na=rtcp-fb:124 ccm fir\r\na=rtcp-fb:124 nack\r\na=rtcp-fb:124 nack pli\r\na=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=124\r\na=rtpmap:123 H264/90000\r\na=rtcp-fb:123 goog-remb\r\na=rtcp-fb:123 transport-cc\r\na=rtcp-fb:123 ccm fir\r\na=rtcp-fb:123 nack\r\na=rtcp-fb:123 nack pli\r\na=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032\r\na=rtpmap:118 rtx/90000\r\na=fmtp:118 apt=123\r\na=rtpmap:114 red/90000\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 ulpfec/90000\r\na=ssrc-group:FID 3988459754 4090452891\r\na=ssrc:3988459754 cname:h/i0LRsa4LHkeU9h\r\na=ssrc:3988459754 msid:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB 6ef84e28-2316-474b-8568-d30bd93532b2\r\na=ssrc:3988459754 mslabel:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB\r\na=ssrc:3988459754 label:6ef84e28-2316-474b-8568-d30bd93532b2\r\na=ssrc:4090452891 cname:h/i0LRsa4LHkeU9h\r\na=ssrc:4090452891 msid:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB 6ef84e28-2316-474b-8568-d30bd93532b2\r\na=ssrc:4090452891 mslabel:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB\r\na=ssrc:4090452891 label:6ef84e28-2316-474b-8568-d30bd93532b2\r\n"}
+2020-10-30 21:49:47.861  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: connecting with first in room M1
+2020-10-30 21:49:47.861  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: Sending message {"id":"receiveVideoAnswer","name":"second","sdpAnswer":"v=0\r\no=- 3813108587 3813108587 IN IP4 0.0.0.0\r\ns=Kurento Media Server\r\nc=IN IP4 0.0.0.0\r\nt=0 0\r\na=msid-semantic: WMS amtV3TIWmt99QbsdqO6C64gM3VMkuuDMCqF8\r\na=group:BUNDLE 0 1\r\nm=audio 1 UDP/TLS/RTP/SAVPF 111 0\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=sendrecv\r\na=mid:0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtpmap:111 opus/48000/2\r\na=rtpmap:0 PCMU/8000\r\na=setup:active\r\na=rtcp-mux\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=ssrc:2719773158 cname:user3754156602@host-ddd8c16b\r\na=ice-ufrag:llkp\r\na=ice-pwd:3sdFmrUGSz2S13jfzFAAmi\r\na=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A\r\nm=video 1 UDP/TLS/RTP/SAVPF 96 102 127 125 108 124 123\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=sendrecv\r\na=mid:1\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtpmap:96 VP8/90000\r\na=rtpmap:102 H264/90000\r\na=rtpmap:127 H264/90000\r\na=rtpmap:125 H264/90000\r\na=rtpmap:108 H264/90000\r\na=rtpmap:124 H264/90000\r\na=rtpmap:123 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=rtcp-fb:127 goog-remb\r\na=rtcp-fb:127 ccm fir\r\na=rtcp-fb:127 nack\r\na=rtcp-fb:127 nack pli\r\na=rtcp-fb:125 goog-remb\r\na=rtcp-fb:125 ccm fir\r\na=rtcp-fb:125 nack\r\na=rtcp-fb:125 nack pli\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=rtcp-fb:124 goog-remb\r\na=rtcp-fb:124 ccm fir\r\na=rtcp-fb:124 nack\r\na=rtcp-fb:124 nack pli\r\na=rtcp-fb:123 goog-remb\r\na=rtcp-fb:123 ccm fir\r\na=rtcp-fb:123 nack\r\na=rtcp-fb:123 nack pli\r\na=setup:active\r\na=rtcp-mux\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032\r\na=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032\r\na=ssrc:225195360 cname:user3754156602@host-ddd8c16b\r\na=ice-ufrag:llkp\r\na=ice-pwd:3sdFmrUGSz2S13jfzFAAmi\r\na=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A\r\n"}
+2020-10-30 21:49:47.861  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: SdpOffer for first is v=0
+o=- 8307784813316724996 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE 0 1
+a=msid-semantic: WMS 0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB
+m=audio 9 UDP/TLS/RTP/SAVPF 111 103 104 9 0 8 106 105 13 110 112 113 126
+c=IN IP4 0.0.0.0
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:DL7u
+a=ice-pwd:n02hbO10PSfjozb/uj1BYH7w
+a=ice-options:trickle
+a=fingerprint:sha-256 5E:2D:58:3E:21:14:06:1D:0C:E0:D9:6C:E2:84:70:51:0E:85:0D:E7:35:2C:EC:FA:D6:B7:0A:2B:7D:1A:E7:F2
+a=setup:actpass
+a=mid:0
+a=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01
+a=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid
+a=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id
+a=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id
+a=sendrecv
+a=msid:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB 571cf141-9b45-4d52-8a66-8e6dfd61b3c6
+a=rtcp-mux
+a=rtpmap:111 opus/48000/2
+a=rtcp-fb:111 transport-cc
+a=fmtp:111 minptime=10;useinbandfec=1
+a=rtpmap:103 ISAC/16000
+a=rtpmap:104 ISAC/32000
+a=rtpmap:9 G722/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:106 CN/32000
+a=rtpmap:105 CN/16000
+a=rtpmap:13 CN/8000
+a=rtpmap:110 telephone-event/48000
+a=rtpmap:112 telephone-event/32000
+a=rtpmap:113 telephone-event/16000
+a=rtpmap:126 telephone-event/8000
+a=ssrc:1335059391 cname:h/i0LRsa4LHkeU9h
+a=ssrc:1335059391 msid:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB 571cf141-9b45-4d52-8a66-8e6dfd61b3c6
+a=ssrc:1335059391 mslabel:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB
+a=ssrc:1335059391 label:571cf141-9b45-4d52-8a66-8e6dfd61b3c6
+m=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100 101 102 121 127 120 125 107 108 109 124 119 123 118 114 115 116
+c=IN IP4 0.0.0.0
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:DL7u
+a=ice-pwd:n02hbO10PSfjozb/uj1BYH7w
+a=ice-options:trickle
+a=fingerprint:sha-256 5E:2D:58:3E:21:14:06:1D:0C:E0:D9:6C:E2:84:70:51:0E:85:0D:E7:35:2C:EC:FA:D6:B7:0A:2B:7D:1A:E7:F2
+a=setup:actpass
+a=mid:1
+a=extmap:14 urn:ietf:params:rtp-hdrext:toffset
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=extmap:13 urn:3gpp:video-orientation
+a=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01
+a=extmap:12 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay
+a=extmap:11 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type
+a=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing
+a=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space
+a=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid
+a=extmap:5 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id
+a=extmap:6 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id
+a=sendrecv
+a=msid:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB 6ef84e28-2316-474b-8568-d30bd93532b2
+a=rtcp-mux
+a=rtcp-rsize
+a=rtpmap:96 VP8/90000
+a=rtcp-fb:96 goog-remb
+a=rtcp-fb:96 transport-cc
+a=rtcp-fb:96 ccm fir
+a=rtcp-fb:96 nack
+a=rtcp-fb:96 nack pli
+a=rtpmap:97 rtx/90000
+a=fmtp:97 apt=96
+a=rtpmap:98 VP9/90000
+a=rtcp-fb:98 goog-remb
+a=rtcp-fb:98 transport-cc
+a=rtcp-fb:98 ccm fir
+a=rtcp-fb:98 nack
+a=rtcp-fb:98 nack pli
+a=fmtp:98 profile-id=0
+a=rtpmap:99 rtx/90000
+a=fmtp:99 apt=98
+a=rtpmap:100 VP9/90000
+a=rtcp-fb:100 goog-remb
+a=rtcp-fb:100 transport-cc
+a=rtcp-fb:100 ccm fir
+a=rtcp-fb:100 nack
+a=rtcp-fb:100 nack pli
+a=fmtp:100 profile-id=2
+a=rtpmap:101 rtx/90000
+a=fmtp:101 apt=100
+a=rtpmap:102 H264/90000
+a=rtcp-fb:102 goog-remb
+a=rtcp-fb:102 transport-cc
+a=rtcp-fb:102 ccm fir
+a=rtcp-fb:102 nack
+a=rtcp-fb:102 nack pli
+a=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f
+a=rtpmap:121 rtx/90000
+a=fmtp:121 apt=102
+a=rtpmap:127 H264/90000
+a=rtcp-fb:127 goog-remb
+a=rtcp-fb:127 transport-cc
+a=rtcp-fb:127 ccm fir
+a=rtcp-fb:127 nack
+a=rtcp-fb:127 nack pli
+a=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f
+a=rtpmap:120 rtx/90000
+a=fmtp:120 apt=127
+a=rtpmap:125 H264/90000
+a=rtcp-fb:125 goog-remb
+a=rtcp-fb:125 transport-cc
+a=rtcp-fb:125 ccm fir
+a=rtcp-fb:125 nack
+a=rtcp-fb:125 nack pli
+a=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f
+a=rtpmap:107 rtx/90000
+a=fmtp:107 apt=125
+a=rtpmap:108 H264/90000
+a=rtcp-fb:108 goog-remb
+a=rtcp-fb:108 transport-cc
+a=rtcp-fb:108 ccm fir
+a=rtcp-fb:108 nack
+a=rtcp-fb:108 nack pli
+a=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f
+a=rtpmap:109 rtx/90000
+a=fmtp:109 apt=108
+a=rtpmap:124 H264/90000
+a=rtcp-fb:124 goog-remb
+a=rtcp-fb:124 transport-cc
+a=rtcp-fb:124 ccm fir
+a=rtcp-fb:124 nack
+a=rtcp-fb:124 nack pli
+a=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032
+a=rtpmap:119 rtx/90000
+a=fmtp:119 apt=124
+a=rtpmap:123 H264/90000
+a=rtcp-fb:123 goog-remb
+a=rtcp-fb:123 transport-cc
+a=rtcp-fb:123 ccm fir
+a=rtcp-fb:123 nack
+a=rtcp-fb:123 nack pli
+a=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032
+a=rtpmap:118 rtx/90000
+a=fmtp:118 apt=123
+a=rtpmap:114 red/90000
+a=rtpmap:115 rtx/90000
+a=fmtp:115 apt=114
+a=rtpmap:116 ulpfec/90000
+a=ssrc-group:FID 3988459754 4090452891
+a=ssrc:3988459754 cname:h/i0LRsa4LHkeU9h
+a=ssrc:3988459754 msid:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB 6ef84e28-2316-474b-8568-d30bd93532b2
+a=ssrc:3988459754 mslabel:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB
+a=ssrc:3988459754 label:6ef84e28-2316-474b-8568-d30bd93532b2
+a=ssrc:4090452891 cname:h/i0LRsa4LHkeU9h
+a=ssrc:4090452891 msid:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB 6ef84e28-2316-474b-8568-d30bd93532b2
+a=ssrc:4090452891 mslabel:0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB
+a=ssrc:4090452891 label:6ef84e28-2316-474b-8568-d30bd93532b2
+
+2020-10-30 21:49:47.861  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : PARTICIPANT second: receiving video from first
+2020-10-30 21:49:47.861  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : PARTICIPANT second: creating new endpoint for first
+2020-10-30 21:49:47.862  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : gather candidates
+2020-10-30 21:49:47.862  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : PARTICIPANT first: receiving video from second
+2020-10-30 21:49:47.862  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : PARTICIPANT first: obtained endpoint for second
+2020-10-30 21:49:47.980  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : PARTICIPANT second: obtained endpoint for first
+2020-10-30 21:49:48.060  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:3358000529 1 udp 2122260223 192.168.86.21 50517 typ host generation 0 ufrag 6ne0 network-id 1 network-cost 10","sdpMid":"0","sdpMLineIndex":0},"name":"second"}
+2020-10-30 21:49:48.060  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is second
+2020-10-30 21:49:48.130  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:2385519367 1 udp 2122194687 11.112.195.143 64868 typ host generation 0 ufrag 6ne0 network-id 2 network-cost 50","sdpMid":"0","sdpMLineIndex":0},"name":"second"}
+2020-10-30 21:49:48.130  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is second
+2020-10-30 21:49:48.169  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: SdpAnswer for first is v=0
+o=- 3813108588 3813108588 IN IP4 0.0.0.0
+s=Kurento Media Server
+c=IN IP4 0.0.0.0
+t=0 0
+a=msid-semantic: WMS 0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB
+a=group:BUNDLE 0 1
+m=audio 1 UDP/TLS/RTP/SAVPF 111 0
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=sendrecv
+a=mid:0
+a=rtcp:9 IN IP4 0.0.0.0
+a=rtpmap:111 opus/48000/2
+a=rtpmap:0 PCMU/8000
+a=setup:active
+a=rtcp-mux
+a=fmtp:111 minptime=10;useinbandfec=1
+a=ssrc:1894522748 cname:user3612007667@host-415e9230
+a=ice-ufrag:cCDo
+a=ice-pwd:I7ZbQ4YP5egOG0D+F0S/4p
+a=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A
+m=video 1 UDP/TLS/RTP/SAVPF 96 102 127 125 108 124 123
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=sendrecv
+a=mid:1
+a=rtcp:9 IN IP4 0.0.0.0
+a=rtpmap:96 VP8/90000
+a=rtpmap:102 H264/90000
+a=rtpmap:127 H264/90000
+a=rtpmap:125 H264/90000
+a=rtpmap:108 H264/90000
+a=rtpmap:124 H264/90000
+a=rtpmap:123 H264/90000
+a=rtcp-fb:96 goog-remb
+a=rtcp-fb:96 ccm fir
+a=rtcp-fb:96 nack
+a=rtcp-fb:96 nack pli
+a=rtcp-fb:102 goog-remb
+a=rtcp-fb:102 ccm fir
+a=rtcp-fb:102 nack
+a=rtcp-fb:102 nack pli
+a=rtcp-fb:127 goog-remb
+a=rtcp-fb:127 ccm fir
+a=rtcp-fb:127 nack
+a=rtcp-fb:127 nack pli
+a=rtcp-fb:125 goog-remb
+a=rtcp-fb:125 ccm fir
+a=rtcp-fb:125 nack
+a=rtcp-fb:125 nack pli
+a=rtcp-fb:108 goog-remb
+a=rtcp-fb:108 ccm fir
+a=rtcp-fb:108 nack
+a=rtcp-fb:108 nack pli
+a=rtcp-fb:124 goog-remb
+a=rtcp-fb:124 ccm fir
+a=rtcp-fb:124 nack
+a=rtcp-fb:124 nack pli
+a=rtcp-fb:123 goog-remb
+a=rtcp-fb:123 ccm fir
+a=rtcp-fb:123 nack
+a=rtcp-fb:123 nack pli
+a=setup:active
+a=rtcp-mux
+a=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f
+a=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f
+a=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f
+a=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f
+a=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032
+a=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032
+a=ssrc:2532254314 cname:user3612007667@host-415e9230
+a=ice-ufrag:cCDo
+a=ice-pwd:I7ZbQ4YP5egOG0D+F0S/4p
+a=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A
+
+2020-10-30 21:49:48.169  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: Sending message {"id":"receiveVideoAnswer","name":"first","sdpAnswer":"v=0\r\no=- 3813108588 3813108588 IN IP4 0.0.0.0\r\ns=Kurento Media Server\r\nc=IN IP4 0.0.0.0\r\nt=0 0\r\na=msid-semantic: WMS 0suBfdZ6R4mKBqlNfKKqwDp4GcKXCct0nUcB\r\na=group:BUNDLE 0 1\r\nm=audio 1 UDP/TLS/RTP/SAVPF 111 0\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=sendrecv\r\na=mid:0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtpmap:111 opus/48000/2\r\na=rtpmap:0 PCMU/8000\r\na=setup:active\r\na=rtcp-mux\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=ssrc:1894522748 cname:user3612007667@host-415e9230\r\na=ice-ufrag:cCDo\r\na=ice-pwd:I7ZbQ4YP5egOG0D+F0S/4p\r\na=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A\r\nm=video 1 UDP/TLS/RTP/SAVPF 96 102 127 125 108 124 123\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=sendrecv\r\na=mid:1\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtpmap:96 VP8/90000\r\na=rtpmap:102 H264/90000\r\na=rtpmap:127 H264/90000\r\na=rtpmap:125 H264/90000\r\na=rtpmap:108 H264/90000\r\na=rtpmap:124 H264/90000\r\na=rtpmap:123 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=rtcp-fb:127 goog-remb\r\na=rtcp-fb:127 ccm fir\r\na=rtcp-fb:127 nack\r\na=rtcp-fb:127 nack pli\r\na=rtcp-fb:125 goog-remb\r\na=rtcp-fb:125 ccm fir\r\na=rtcp-fb:125 nack\r\na=rtcp-fb:125 nack pli\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=rtcp-fb:124 goog-remb\r\na=rtcp-fb:124 ccm fir\r\na=rtcp-fb:124 nack\r\na=rtcp-fb:124 nack pli\r\na=rtcp-fb:123 goog-remb\r\na=rtcp-fb:123 ccm fir\r\na=rtcp-fb:123 nack\r\na=rtcp-fb:123 nack pli\r\na=setup:active\r\na=rtcp-mux\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=fmtp:127 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=fmtp:125 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=fmtp:124 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d0032\r\na=fmtp:123 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640032\r\na=ssrc:2532254314 cname:user3612007667@host-415e9230\r\na=ice-ufrag:cCDo\r\na=ice-pwd:I7ZbQ4YP5egOG0D+F0S/4p\r\na=fingerprint:sha-256 6D:BC:20:D0:2E:8A:BF:5D:AB:D4:12:CD:04:E4:8A:F1:EA:3E:07:62:B4:39:3E:DE:14:B2:E1:1E:05:DF:69:0A\r\n"}
+2020-10-30 21:49:48.171  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : gather candidates
+2020-10-30 21:49:48.171  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : PARTICIPANT second: receiving video from first
+2020-10-30 21:49:48.171  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : PARTICIPANT second: obtained endpoint for first
+2020-10-30 21:49:48.172  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:3358000529 1 udp 2122260223 192.168.86.21 55807 typ host generation 0 ufrag 6ne0 network-id 1 network-cost 10","sdpMid":"1","sdpMLineIndex":1},"name":"second"}
+2020-10-30 21:49:48.172  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is second
+2020-10-30 21:49:48.219  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:2385519367 1 udp 2122194687 11.112.195.143 55755 typ host generation 0 ufrag 6ne0 network-id 2 network-cost 50","sdpMid":"1","sdpMLineIndex":1},"name":"second"}
+2020-10-30 21:49:48.219  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is second
+2020-10-30 21:49:48.276  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'second': {"id":"onIceCandidate","candidate":{"candidate":"candidate:3358000529 1 udp 2122260223 192.168.86.21 52180 typ host generation 0 ufrag kA1e network-id 1 network-cost 10","sdpMid":"0","sdpMLineIndex":0},"name":"second"}
+2020-10-30 21:49:48.276  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: add candidate, name is second
+2020-10-30 21:49:48.278  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:2258958689 1 tcp 1518280447 192.168.86.21 9 typ host tcptype active generation 0 ufrag 6ne0 network-id 1 network-cost 10","sdpMid":"0","sdpMLineIndex":0},"name":"second"}
+2020-10-30 21:49:48.278  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is second
+2020-10-30 21:49:48.331  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'second': {"id":"onIceCandidate","candidate":{"candidate":"candidate:3358000529 1 udp 2122260223 192.168.86.21 50861 typ host generation 0 ufrag kA1e network-id 1 network-cost 10","sdpMid":"1","sdpMLineIndex":1},"name":"second"}
+2020-10-30 21:49:48.332  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: add candidate, name is second
+2020-10-30 21:49:48.343  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:3233013751 1 tcp 1518214911 11.112.195.143 9 typ host tcptype active generation 0 ufrag 6ne0 network-id 2 network-cost 50","sdpMid":"0","sdpMLineIndex":0},"name":"second"}
+2020-10-30 21:49:48.344  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is second
+2020-10-30 21:49:48.373  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'second': {"id":"onIceCandidate","candidate":{"candidate":"candidate:3358000529 1 udp 2122260223 192.168.86.21 52775 typ host generation 0 ufrag DL7u network-id 1 network-cost 10","sdpMid":"0","sdpMLineIndex":0},"name":"first"}
+2020-10-30 21:49:48.374  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: add candidate, name is first
+2020-10-30 21:49:48.376  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:2258958689 1 tcp 1518280447 192.168.86.21 9 typ host tcptype active generation 0 ufrag 6ne0 network-id 1 network-cost 10","sdpMid":"1","sdpMLineIndex":1},"name":"second"}
+2020-10-30 21:49:48.377  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is second
+2020-10-30 21:49:48.409  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'second': {"id":"onIceCandidate","candidate":{"candidate":"candidate:3358000529 1 udp 2122260223 192.168.86.21 62125 typ host generation 0 ufrag DL7u network-id 1 network-cost 10","sdpMid":"1","sdpMLineIndex":1},"name":"first"}
+2020-10-30 21:49:48.410  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: add candidate, name is first
+2020-10-30 21:49:48.412  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:3233013751 1 tcp 1518214911 11.112.195.143 9 typ host tcptype active generation 0 ufrag 6ne0 network-id 2 network-cost 50","sdpMid":"1","sdpMLineIndex":1},"name":"second"}
+2020-10-30 21:49:48.414  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is second
+2020-10-30 21:49:48.441  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'second': {"id":"onIceCandidate","candidate":{"candidate":"candidate:2258958689 1 tcp 1518280447 192.168.86.21 9 typ host tcptype active generation 0 ufrag kA1e network-id 1 network-cost 10","sdpMid":"0","sdpMLineIndex":0},"name":"second"}
+2020-10-30 21:49:48.442  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: add candidate, name is second
+2020-10-30 21:49:48.446  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'first': {"id":"onIceCandidate","candidate":{"candidate":"candidate:1232012069 1 udp 1686052607 73.140.221.12 50517 typ srflx raddr 192.168.86.21 rport 50517 generation 0 ufrag 6ne0 network-id 1 network-cost 10","sdpMid":"0","sdpMLineIndex":0},"name":"second"}
+2020-10-30 21:49:48.446  INFO 30078 --- [nio-8443-exec-4] o.k.tutorial.groupcall.UserSession       : USER first: add candidate, name is second
+2020-10-30 21:49:48.477  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'second': {"id":"onIceCandidate","candidate":{"candidate":"candidate:2258958689 1 tcp 1518280447 192.168.86.21 9 typ host tcptype active generation 0 ufrag DL7u network-id 1 network-cost 10","sdpMid":"0","sdpMLineIndex":0},"name":"first"}
+2020-10-30 21:49:48.477  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: add candidate, name is first
+2020-10-30 21:49:48.507  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'second': {"id":"onIceCandidate","candidate":{"candidate":"candidate:2258958689 1 tcp 1518280447 192.168.86.21 9 typ host tcptype active generation 0 ufrag DL7u network-id 1 network-cost 10","sdpMid":"1","sdpMLineIndex":1},"name":"first"}
+2020-10-30 21:49:48.508  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: add candidate, name is first
+2020-10-30 21:49:48.547  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'second': {"id":"onIceCandidate","candidate":{"candidate":"candidate:1232012069 1 udp 1686052607 73.140.221.12 52775 typ srflx raddr 192.168.86.21 rport 52775 generation 0 ufrag DL7u network-id 1 network-cost 10","sdpMid":"0","sdpMLineIndex":0},"name":"first"}
+2020-10-30 21:49:48.547  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: add candidate, name is first
+2020-10-30 21:49:48.583  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.CallHandler       : Incoming message from user 'second': {"id":"onIceCandidate","candidate":{"candidate":"candidate:1232012069 1 udp 1686052607 73.140.221.12 62125 typ srflx raddr 192.168.86.21 rport 62125 generation 0 ufrag DL7u network-id 1 network-cost 10","sdpMid":"1","sdpMLineIndex":1},"name":"first"}
+2020-10-30 21:49:48.583  INFO 30078 --- [nio-8443-exec-3] o.k.tutorial.groupcall.UserSession       : USER second: add candidate, name is first
+2020-10-30 21:49:53.058  INFO 30078 --- [nio-8443-exec-8] o.k.tutorial.groupcall.CallHandler       : Got initiateSessionWithOffer, initiating a new session with SDP offer: {"sdpOffer": "a new offer"}
+2020-10-30 21:49:57.543  INFO 30078 --- [io-8443-exec-10] org.kurento.tutorial.groupcall.Room      : PARTICIPANT first: Leaving room M1
+2020-10-30 21:49:57.544  INFO 30078 --- [io-8443-exec-10] org.kurento.tutorial.groupcall.Room      : ROOM M1: notifying all users that first is leaving the room
+2020-10-30 21:49:57.544  INFO 30078 --- [io-8443-exec-10] o.k.tutorial.groupcall.UserSession       : PARTICIPANT second: canceling video reception from first
+2020-10-30 21:49:57.545  INFO 30078 --- [io-8443-exec-10] o.k.tutorial.groupcall.UserSession       : PARTICIPANT second: removing endpoint for first
+2020-10-30 21:49:57.559  INFO 30078 --- [io-8443-exec-10] o.k.tutorial.groupcall.UserSession       : USER second: Sending message {"id":"participantLeft","name":"first"}
+2020-10-30 21:49:57.560  INFO 30078 --- [io-8443-exec-10] o.k.tutorial.groupcall.UserSession       : PARTICIPANT first: Releasing resources
+2020-10-30 21:49:57.561  INFO 30078 --- [io-8443-exec-10] o.k.tutorial.groupcall.UserSession       : PARTICIPANT first: Released incoming EP for second
+2020-10-30 21:49:57.595  INFO 30078 --- [ventExec-e2-t10] o.k.tutorial.groupcall.UserSession       : PARTICIPANT second: Released successfully incoming EP for first
+2020-10-30 21:49:57.598  INFO 30078 --- [ventExec-e2-t10] o.k.tutorial.groupcall.UserSession       : PARTICIPANT first: Released successfully incoming EP for second
+2020-10-30 21:49:57.598  INFO 30078 --- [EventExec-e2-t6] o.k.tutorial.groupcall.UserSession       : PARTICIPANT first: Released outgoing EP
+2020-10-30 21:49:58.441  INFO 30078 --- [nio-8443-exec-1] org.kurento.tutorial.groupcall.Room      : PARTICIPANT second: Leaving room M1
+2020-10-30 21:49:58.442  INFO 30078 --- [nio-8443-exec-1] org.kurento.tutorial.groupcall.Room      : ROOM M1: notifying all users that second is leaving the room
+2020-10-30 21:49:58.442  INFO 30078 --- [nio-8443-exec-1] o.k.tutorial.groupcall.UserSession       : PARTICIPANT second: Releasing resources
+2020-10-30 21:49:58.472  INFO 30078 --- [EventExec-e2-t6] o.k.tutorial.groupcall.UserSession       : PARTICIPANT second: Released outgoing EP
+2020-10-30 21:50:58.628  INFO 30078 --- [ntLoopGroup-2-2] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 21:50:58.628  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 21:50:58.628  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 21:50:58.631  INFO 30078 --- [ntLoopGroup-2-3] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 21:51:58.753  INFO 30078 --- [ntLoopGroup-2-3] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 21:51:58.753  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 21:51:58.754  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 21:51:58.755  INFO 30078 --- [ntLoopGroup-2-4] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 21:52:58.814  INFO 30078 --- [ntLoopGroup-2-4] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 21:52:58.814  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 21:52:58.814  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 21:52:58.816  INFO 30078 --- [ntLoopGroup-2-5] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 21:53:01.730  INFO 30078 --- [nio-8443-exec-7] o.k.tutorial.groupcall.CallHandler       : Got initiateSessionWithOffer, initiating a new session with SDP offer: {"a new offer"}
+2020-10-30 21:53:58.921  INFO 30078 --- [ntLoopGroup-2-5] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 21:53:58.921  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 21:53:58.921  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 21:53:58.923  INFO 30078 --- [ntLoopGroup-2-6] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 21:54:58.988  INFO 30078 --- [ntLoopGroup-2-6] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 21:54:58.988  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 21:54:58.988  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 21:54:58.990  INFO 30078 --- [ntLoopGroup-2-7] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 21:55:59.104  INFO 30078 --- [ntLoopGroup-2-7] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 21:55:59.105  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 21:55:59.105  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 21:55:59.109  INFO 30078 --- [ntLoopGroup-2-8] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 21:56:59.169  INFO 30078 --- [ntLoopGroup-2-8] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 21:56:59.170  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 21:56:59.170  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 21:56:59.171  INFO 30078 --- [ntLoopGroup-2-1] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 21:57:59.491  INFO 30078 --- [ntLoopGroup-2-1] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 21:57:59.491  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 21:57:59.491  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 21:57:59.492  INFO 30078 --- [ntLoopGroup-2-2] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 21:58:59.550  INFO 30078 --- [ntLoopGroup-2-2] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 21:58:59.550  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 21:58:59.550  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 21:58:59.550  INFO 30078 --- [ntLoopGroup-2-3] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 21:59:59.708  INFO 30078 --- [ntLoopGroup-2-3] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 21:59:59.709  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 21:59:59.709  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 21:59:59.710  INFO 30078 --- [ntLoopGroup-2-4] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 22:00:59.768  INFO 30078 --- [ntLoopGroup-2-4] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 22:00:59.768  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 22:00:59.769  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 22:00:59.770  INFO 30078 --- [ntLoopGroup-2-5] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 22:01:59.927  INFO 30078 --- [ntLoopGroup-2-5] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 22:01:59.927  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 22:01:59.927  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 22:01:59.928  INFO 30078 --- [ntLoopGroup-2-6] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 22:02:59.994  INFO 30078 --- [ntLoopGroup-2-6] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 22:02:59.994  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 22:02:59.994  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 22:02:59.995  INFO 30078 --- [ntLoopGroup-2-7] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 22:04:00.164  INFO 30078 --- [ntLoopGroup-2-7] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  channel closed
+2020-10-30 22:04:00.164  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Connecting native client
+2020-10-30 22:04:00.164  INFO 30078 --- [nnectExec-e3-t0] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Closing previously existing channel when connecting native client
+2020-10-30 22:04:00.166  INFO 30078 --- [ntLoopGroup-2-8] o.k.j.c.JsonRpcClientNettyWebSocket      : [KurentoClient]  Initiating new Netty channel. Will create new handler too!
+2020-10-30 22:04:16.211  WARN 30078 --- [nio-8443-exec-9] w.s.h.ExceptionWebSocketHandlerDecorator : Unhandled exception after connection closed for ExceptionWebSocketHandlerDecorator [delegate=LoggingWebSocketHandlerDecorator [delegate=org.kurento.tutorial.groupcall.CallHandler@7d373bcf]]
+
+java.lang.NullPointerException: null
+	at org.kurento.tutorial.groupcall.UserRegistry.removeBySession(UserRegistry.java:57) ~[classes/:na]
+	at org.kurento.tutorial.groupcall.CallHandler.afterConnectionClosed(CallHandler.java:93) ~[classes/:na]
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.afterConnectionClosed(WebSocketHandlerDecorator.java:85) ~[spring-websocket-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.afterConnectionClosed(LoggingWebSocketHandlerDecorator.java:72) ~[spring-websocket-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.afterConnectionClosed(ExceptionWebSocketHandlerDecorator.java:78) ~[spring-websocket-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.onClose(StandardWebSocketHandlerAdapter.java:145) [spring-websocket-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.tomcat.websocket.WsSession.fireEndpointOnClose(WsSession.java:555) [tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.websocket.WsSession.onClose(WsSession.java:533) [tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.close(WsHttpUpgradeHandler.java:239) [tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:155) [tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:54) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_231]
+
+2020-10-30 22:04:16.232  WARN 30078 --- [nio-8443-exec-4] w.s.h.ExceptionWebSocketHandlerDecorator : Unhandled exception after connection closed for ExceptionWebSocketHandlerDecorator [delegate=LoggingWebSocketHandlerDecorator [delegate=org.kurento.tutorial.groupcall.CallHandler@7d373bcf]]
+
+java.lang.NullPointerException: null
+	at org.kurento.tutorial.groupcall.UserRegistry.removeBySession(UserRegistry.java:57) ~[classes/:na]
+	at org.kurento.tutorial.groupcall.CallHandler.afterConnectionClosed(CallHandler.java:93) ~[classes/:na]
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.afterConnectionClosed(WebSocketHandlerDecorator.java:85) ~[spring-websocket-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.afterConnectionClosed(LoggingWebSocketHandlerDecorator.java:72) ~[spring-websocket-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.afterConnectionClosed(ExceptionWebSocketHandlerDecorator.java:78) ~[spring-websocket-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.onClose(StandardWebSocketHandlerAdapter.java:145) [spring-websocket-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.tomcat.websocket.WsSession.fireEndpointOnClose(WsSession.java:555) [tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.websocket.WsSession.onClose(WsSession.java:533) [tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.close(WsHttpUpgradeHandler.java:239) [tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:155) [tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:54) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_231]
+

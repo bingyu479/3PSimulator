@@ -15,12 +15,16 @@
  *
  */
 
-package org.kurento.tutorial.groupcall;
+package org.kurento.tutorial.groupcall.config;
 
 import org.kurento.client.KurentoClient;
+import org.kurento.tutorial.groupcall.CallHandler;
+import org.kurento.tutorial.groupcall.RoomManager;
+import org.kurento.tutorial.groupcall.UserRegistry;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
@@ -31,9 +35,9 @@ import org.springframework.web.socket.server.standard.ServletServerContainerFact
  * @author Ivan Gracia (izanmail@gmail.com)
  * @since 4.3.1
  */
-@SpringBootApplication
+@Configuration
 @EnableWebSocket
-public class GroupCallApp implements WebSocketConfigurer {
+public class GroupCallWebSocketConfig implements WebSocketConfigurer {
 
   @Bean
   public UserRegistry registry() {
@@ -60,10 +64,6 @@ public class GroupCallApp implements WebSocketConfigurer {
     ServletServerContainerFactoryBean container = new ServletServerContainerFactoryBean();
     container.setMaxTextMessageBufferSize(32768);
     return container;
-  }
-
-  public static void main(String[] args) throws Exception {
-    SpringApplication.run(GroupCallApp.class, args);
   }
 
   @Override
