@@ -24,52 +24,52 @@ import org.kurento.client.WebRtcEndpoint;
 /**
  * Media Pipeline (WebRTC endpoints, i.e. Kurento Media Elements) and connections for the 1 to 1
  * video communication.
- * 
+ *
  * @author Boni Garcia (bgarcia@gsyc.es)
  * @author Micael Gallego (micael.gallego@gmail.com)
  * @since 4.3.1
  */
 public class CallMediaPipeline {
 
-  private MediaPipeline pipeline;
-  private WebRtcEndpoint callerWebRtcEp;
-  private WebRtcEndpoint calleeWebRtcEp;
+	private MediaPipeline pipeline;
+	private WebRtcEndpoint providerWebRtcEp;
+	private WebRtcEndpoint alexaWebRtcEp;
 
-  public CallMediaPipeline(KurentoClient kurento) {
-    try {
-      this.pipeline = kurento.createMediaPipeline();
-      this.callerWebRtcEp = new WebRtcEndpoint.Builder(pipeline).build();
-      this.calleeWebRtcEp = new WebRtcEndpoint.Builder(pipeline).build();
+	public CallMediaPipeline(KurentoClient kurento) {
+		try {
+			this.pipeline = kurento.createMediaPipeline();
+			this.providerWebRtcEp = new WebRtcEndpoint.Builder(pipeline).build();
+			this.alexaWebRtcEp = new WebRtcEndpoint.Builder(pipeline).build();
 
-      this.callerWebRtcEp.connect(this.calleeWebRtcEp);
-      this.calleeWebRtcEp.connect(this.callerWebRtcEp);
-    } catch (Throwable t) {
-      if (this.pipeline != null) {
-        pipeline.release();
-      }
-    }
-  }
+			this.providerWebRtcEp.connect(this.alexaWebRtcEp);
+			this.alexaWebRtcEp.connect(this.providerWebRtcEp);
+		} catch (Throwable t) {
+			if (this.pipeline != null) {
+				pipeline.release();
+			}
+		}
+	}
 
-  public String generateSdpAnswerForCaller(String sdpOffer) {
-    return callerWebRtcEp.processOffer(sdpOffer);
-  }
+	public String generateSdpAnswerForCaller(String sdpOffer) {
+		return providerWebRtcEp.processOffer(sdpOffer);
+	}
 
-  public String generateSdpAnswerForCallee(String sdpOffer) {
-    return calleeWebRtcEp.processOffer(sdpOffer);
-  }
+	public String generateSdpAnswerForCallee(String sdpOffer) {
+		return alexaWebRtcEp.processOffer(sdpOffer);
+	}
 
-  public void release() {
-    if (pipeline != null) {
-      pipeline.release();
-    }
-  }
+	public void release() {
+		if (pipeline != null) {
+			pipeline.release();
+		}
+	}
 
-  public WebRtcEndpoint getCallerWebRtcEp() {
-    return callerWebRtcEp;
-  }
+	public WebRtcEndpoint getProviderWebRtcEp() {
+		return providerWebRtcEp;
+	}
 
-  public WebRtcEndpoint getCalleeWebRtcEp() {
-    return calleeWebRtcEp;
-  }
+	public WebRtcEndpoint getAlexaWebRtcEp() {
+		return alexaWebRtcEp;
+	}
 
 }

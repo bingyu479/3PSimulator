@@ -56,17 +56,20 @@ const IN_CALL = 2;
 function setCallState(nextState) {
 	switch (nextState) {
 	case NO_CALL:
-		enableButton('#call', 'call()');
+		enableButton('#joinAsDoctor', 'joinAsDoctor()');
+		enableButton('#joinAsAlexa', 'joinAsAlexa()');
 		disableButton('#terminate');
 		disableButton('#play');
 		break;
 	case PROCESSING_CALL:
-		disableButton('#call');
+		disableButton('#joinAsDoctor');
+		disableButton('#joinAsAlexa');
 		disableButton('#terminate');
 		disableButton('#play');
 		break;
 	case IN_CALL:
-		disableButton('#call');
+		disableButton('#joinAsDoctor');
+		disableButton('#joinAsAlexa');
 		enableButton('#terminate', 'stop()');
 		disableButton('#play');
 		break;
@@ -97,25 +100,16 @@ ws.onmessage = function(message) {
 	case 'registerResponse':
 		registerResponse(parsedMessage);
 		break;
-	case 'callResponse':
-		callResponse(parsedMessage);
-		break;
-	case 'incomingCall':
-		incomingCall(parsedMessage);
-		break;
-	case 'startCommunication':
-		startCommunication(parsedMessage);
-		break;
-	case 'stopCommunication':
-		console.info('Communication ended by remote peer');
-		stop(true);
-		break;
 	case 'iceCandidate':
+        //Received remote peer's candidate
 		webRtcPeer.addIceCandidate(parsedMessage.candidate, function(error) {
 			if (error)
 				return console.error('Error adding candidate: ' + error);
 		});
 		break;
+	case 'startCommunication':
+        startCommunication(parsedMessage);
+        break;
 	default:
 		console.error('Unrecognized message', parsedMessage);
 	}
@@ -133,86 +127,6 @@ function registerResponse(message) {
 	}
 }
 
-function callResponse(message) {
-	if (message.response != 'accepted') {
-		console.info('Call not accepted by peer. Closing call');
-		var errorMessage = message.message ? message.message
-				: 'Unknown reason for call rejection.';
-		console.log(errorMessage);
-		stop();
-	} else {
-		setCallState(IN_CALL);
-		webRtcPeer.processAnswer(message.sdpAnswer, function(error) {
-			if (error)
-				return console.error(error);
-		});
-	}
-}
-
-function startCommunication(message) {
-	setCallState(IN_CALL);
-	webRtcPeer.processAnswer(message.sdpAnswer, function(error) {
-		if (error)
-			return console.error(error);
-	});
-}
-
-function incomingCall(message) {
-	// If bussy just reject without disturbing user
-	if (callState != NO_CALL) {
-		var response = {
-			id : 'incomingCallResponse',
-			from : message.from,
-			callResponse : 'reject',
-			message : 'bussy'
-		};
-		return sendMessage(response);
-	}
-
-	setCallState(PROCESSING_CALL);
-	if (confirm('User ' + message.from
-			+ ' is calling you. Do you accept the call?')) {
-		showSpinner(videoInput, videoOutput);
-
-		from = message.from;
-		var options = {
-			localVideo : videoInput,
-			remoteVideo : videoOutput,
-			onicecandidate : onIceCandidate,
-			onerror : onError
-		}
-		webRtcPeer = new kurentoUtils.WebRtcPeer.WebRtcPeerSendrecv(options,
-				function(error) {
-					if (error) {
-						return console.error(error);
-					}
-					webRtcPeer.generateOffer(onOfferIncomingCall);
-				});
-
-	} else {
-		var response = {
-			id : 'incomingCallResponse',
-			from : message.from,
-			callResponse : 'reject',
-			message : 'user declined'
-		};
-		sendMessage(response);
-		stop();
-	}
-}
-
-function onOfferIncomingCall(error, offerSdp) {
-	if (error)
-		return console.error("Error generating the offer");
-	var response = {
-		id : 'incomingCallResponse',
-		from : from,
-		callResponse : 'accept',
-		sdpOffer : offerSdp
-	};
-	sendMessage(response);
-}
-
 function register() {
 	var name = document.getElementById('name').value;
 	if (name == '') {
@@ -226,12 +140,12 @@ function register() {
 		name : name
 	};
 	sendMessage(message);
-	document.getElementById('peer').focus();
+	document.getElementById('room').focus();
 }
 
-function call() {
-	if (document.getElementById('peer').value == '') {
-		window.alert('You must specify the peer name');
+function joinAsDoctor() {
+	if (document.getElementById('room').value == '') {
+		window.alert('You must specify the room name');
 		return;
 	}
 	setCallState(PROCESSING_CALL);
@@ -252,17 +166,73 @@ function call() {
 			});
 }
 
+// When doctor receive the SDP answer from App server (from calleeWebRtcEp)
+function startCommunication(message) {
+	setCallState(IN_CALL);
+	webRtcPeer.processAnswer(message.sdpAnswer, function(error) {
+		if (error)
+			return console.error(error);
+	});
+}
+
 function onOfferCall(error, offerSdp) {
 	if (error)
 		return console.error('Error generating the offer');
-	console.log('Invoking SDP offer callback function');
+	console.log('Sending SDP offer for doctor via WebSocket');
 	var message = {
-		id : 'call',
-		from : document.getElementById('name').value,
-		to : document.getElementById('peer').value,
+		id : 'providerJoinSession',
+		provider : document.getElementById('name').value,
+		room : document.getElementById('room').value,
 		sdpOffer : offerSdp
 	};
 	sendMessage(message);
+}
+
+function joinAsAlexa() {
+	if (document.getElementById('room').value == '') {
+		window.alert('You must specify the room name');
+		return;
+	}
+	setCallState(PROCESSING_CALL);
+	showSpinner(videoInput, videoOutput);
+
+	var options = {
+		localVideo : videoInput,
+		remoteVideo : videoOutput,
+		onicecandidate : onIceCandidate,
+		onerror : onError
+	}
+	webRtcPeer = new kurentoUtils.WebRtcPeer.WebRtcPeerSendrecv(options,
+			function(error) {
+				if (error) {
+					return console.error(error);
+				}
+				webRtcPeer.generateOffer(onOfferHttpCall);
+			});
+}
+
+function onOfferHttpCall(error, offerSdp) {
+    if (error)
+    	return console.error('Error generating the offer');
+    console.log('Sending SDP offer for Alexa via InitiateSession API call');
+
+    // Call InitiateSession API
+    const data = {
+       userName: document.getElementById('name').value,
+       roomName: document.getElementById('room').value,
+       sdpOffer: offerSdp
+    };
+
+    console.log('data is');
+    console.log('data is {}' + JSON.stringify(data));
+    fetch('https://localhost:8443/alexa/telehealth/session/initiate', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
 }
 
 function stop(message) {
