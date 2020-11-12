@@ -53,10 +53,6 @@ public class UserRegistry {
 		log.info("User {} in UserRegistry", user.getName());
 	}
 
-	public UserSession getByName(String name) {
-		return usersByName.get(name);
-	}
-
 	public UserSession getBySession(WebSocketSession session) {
 		return usersBySessionId.get(session.getId());
 	}

@@ -18,7 +18,7 @@
 package org.kurento.tutorial.one2onecall.config;
 
 import org.kurento.client.KurentoClient;
-import org.kurento.tutorial.one2onecall.ProviderCallHandler;
+import org.kurento.tutorial.one2onecall.CallHandler;
 import org.kurento.tutorial.one2onecall.users.UserRegistry;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,8 +36,8 @@ import org.springframework.web.socket.server.standard.ServletServerContainerFact
 public class GroupCallWebSocketConfig implements WebSocketConfigurer {
 
 	@Bean
-	public ProviderCallHandler callHandler() {
-		return new ProviderCallHandler();
+	public CallHandler callHandler() {
+		return new CallHandler();
 	}
 
 	@Bean

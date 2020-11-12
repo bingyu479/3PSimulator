@@ -110,6 +110,10 @@ ws.onmessage = function(message) {
 	case 'startCommunication':
         startCommunication(parsedMessage);
         break;
+    case 'stopCommunication':
+            console.info('Communication ended by remote peer');
+            stop(true);
+            break;
 	default:
 		console.error('Unrecognized message', parsedMessage);
 	}

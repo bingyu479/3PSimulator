@@ -50,14 +50,6 @@ public class CallMediaPipeline {
 		}
 	}
 
-	public String generateSdpAnswerForCaller(String sdpOffer) {
-		return providerWebRtcEp.processOffer(sdpOffer);
-	}
-
-	public String generateSdpAnswerForCallee(String sdpOffer) {
-		return alexaWebRtcEp.processOffer(sdpOffer);
-	}
-
 	public void release() {
 		if (pipeline != null) {
 			pipeline.release();

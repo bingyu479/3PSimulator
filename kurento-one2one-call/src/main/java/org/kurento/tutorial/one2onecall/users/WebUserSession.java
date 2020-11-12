@@ -14,8 +14,8 @@ public class WebUserSession extends UserSession {
 
 	private final WebSocketSession session;
 
-	public WebUserSession(WebSocketSession session, String name) {
-		super(name);
+	public WebUserSession(WebSocketSession session, String name, String roomName) {
+		super(name, roomName);
 		this.session = session;
 
 	}
@@ -35,5 +35,12 @@ public class WebUserSession extends UserSession {
 		}
 	}
 
+	public void leaveRoom() throws IOException {
+		this.webRtcEndpoint = null;
+		this.candidateList.clear();
+		JsonObject message = new JsonObject();
+		message.addProperty("id", "stopCommunication");
+		this.sendMessage(message);
+	}
 
 }

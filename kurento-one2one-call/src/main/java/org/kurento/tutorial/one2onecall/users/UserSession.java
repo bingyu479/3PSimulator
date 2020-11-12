@@ -42,17 +42,25 @@ public class UserSession {
 	protected final String name;
 
 	protected String sdpOffer;
-	protected String callingTo;
-	protected String callingFrom;
+	protected String roomName;
 	protected WebRtcEndpoint webRtcEndpoint;
 	protected final List<IceCandidate> candidateList = new ArrayList<IceCandidate>();
 
-	public UserSession(String name) {
+	public UserSession(String name, String roomName) {
 		this.name = name;
+		this.roomName = roomName;
 	}
 
 	public String getName() {
 		return name;
+	}
+
+	public String getRoomName() {
+		return roomName;
+	}
+
+	public void setRoomName(String roomName) {
+		this.roomName = roomName;
 	}
 
 	public String getSdpOffer() {
@@ -61,22 +69,6 @@ public class UserSession {
 
 	public void setSdpOffer(String sdpOffer) {
 		this.sdpOffer = sdpOffer;
-	}
-
-	public String getCallingTo() {
-		return callingTo;
-	}
-
-	public void setCallingTo(String callingTo) {
-		this.callingTo = callingTo;
-	}
-
-	public String getCallingFrom() {
-		return callingFrom;
-	}
-
-	public void setCallingFrom(String callingFrom) {
-		this.callingFrom = callingFrom;
 	}
 
 	public WebRtcEndpoint getWebRtcEndpoint() {
@@ -98,10 +90,5 @@ public class UserSession {
 		} else {
 			candidateList.add(candidate);
 		}
-	}
-
-	public void clear() {
-		this.webRtcEndpoint = null;
-		this.candidateList.clear();
 	}
 }

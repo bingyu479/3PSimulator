@@ -13,16 +13,12 @@ public class Room implements Closeable {
 
 	private CallMediaPipeline callMediaPipeline;
 	private WebUserSession provider;
-	private AlexaUserSession patient;
-	private boolean providerJoined;
-	private boolean alexaJoined;
+	private AlexaUserSession alexa;
 
 	private final String roomName;
 
 	public Room(String name, CallMediaPipeline callMediaPipeline) {
 		this.roomName = name;
-		this.alexaJoined = false;
-		this.providerJoined = false;
 		this.callMediaPipeline = callMediaPipeline;
 	}
 
@@ -36,26 +32,16 @@ public class Room implements Closeable {
 
 	public void joinAsProvider(String userName, WebUserSession userSession) {
 		this.provider = userSession;
-		this.providerJoined = true;
 		log.info("Provider {} has joined", userName);
 	}
 
 	public void joinAsAlexa(String userName, AlexaUserSession userSession) {
-		this.patient = userSession;
-		this.alexaJoined = true;
+		this.alexa = userSession;
 		log.info("Alexa user {} has joined", userName);
 	}
 
-	public boolean hasAlexaJoined() {
-		return this.alexaJoined;
-	}
-
-	public boolean hasProviderJoined() {
-		return this.providerJoined;
-	}
-
-	public AlexaUserSession getPatient() {
-		return patient;
+	public AlexaUserSession getAlexa() {
+		return alexa;
 	}
 
 	public WebUserSession getProvider() {
@@ -66,7 +52,7 @@ public class Room implements Closeable {
 	public void close() {
 
 		provider = null;
-		patient = null;
+		alexa = null;
 
 		log.info("Room {} closed", this.roomName);
 	}
