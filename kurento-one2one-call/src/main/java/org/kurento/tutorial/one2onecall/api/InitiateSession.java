@@ -34,8 +34,6 @@ public class InitiateSession {
 		log.info("Alexa user {} started a session {} with an SDP offer",
 			initiateSession.getUserName(), initiateSession.getRoomName());
 
-		// Return DeferredResponse
-
 		// Register Alexa user
 		AlexaUserSession alexaUserSession = new AlexaUserSession(initiateSession.getUserName(), initiateSession.getRoomName(),
 			initiateSession.getSdpOffer());

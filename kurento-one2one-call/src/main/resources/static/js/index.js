@@ -229,7 +229,7 @@ function onOfferHttpCall(error, offerSdp) {
 
     console.log('data is');
     console.log('data is {}' + JSON.stringify(data));
-    fetch('https://localhost:8443/alexa/telehealth/session/initiate', {
+    fetch('/alexa/telehealth/session/initiate', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

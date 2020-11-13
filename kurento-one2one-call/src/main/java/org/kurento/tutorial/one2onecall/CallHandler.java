@@ -110,9 +110,9 @@ public class CallHandler extends TextWebSocketHandler {
 		CallMediaPipeline callMediaPipeline = room.getCallMediaPipeline();
 		provider.setWebRtcEndpoint(callMediaPipeline.getProviderWebRtcEp());
 
-		provider.getWebRtcEndpoint().setStunServerAddress("3.237.192.82");
-		provider.getWebRtcEndpoint().setStunServerPort(4172);
-		provider.getWebRtcEndpoint().setTurnUrl("1605127832:tk9fafcdbf-404c-4bda-96d2-402dd262fc0a-us-east-1_1605122432579_0:qYmEjPp03svJDe66GWG4v2q2fGk=@3.81.228.72:443?transport=tcp");
+//		provider.getWebRtcEndpoint().setStunServerAddress("3.237.192.82");
+//		provider.getWebRtcEndpoint().setStunServerPort(4172);
+//		provider.getWebRtcEndpoint().setTurnUrl("1605127832:tk9fafcdbf-404c-4bda-96d2-402dd262fc0a-us-east-1_1605122432579_0:qYmEjPp03svJDe66GWG4v2q2fGk=@3.81.228.72:443?transport=tcp");
 
 		provider.getWebRtcEndpoint().addIceCandidateFoundListener(
 			new EventListener<IceCandidateFoundEvent>() {

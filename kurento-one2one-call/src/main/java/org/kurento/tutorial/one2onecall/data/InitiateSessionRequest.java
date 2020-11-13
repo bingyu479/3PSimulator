@@ -1,5 +1,6 @@
 package org.kurento.tutorial.one2onecall.data;
 
+import javax.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ public class InitiateSessionRequest {
 
     private String roomName;
 
+    @Nullable
     private String sdpOffer;
 
     public String getUserName() {
