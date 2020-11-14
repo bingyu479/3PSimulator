@@ -1,4 +1,4 @@
-package org.kurento.tutorial.one2onecall.data;
+package org.kurento.tutorial.one2onecall.models;
 
 import javax.annotation.Nullable;
 import lombok.AllArgsConstructor;
@@ -6,11 +6,11 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class InitiateSessionRequest {
+public class TelehealthSessionRequest {
 
     private String userName;
 
-    private String roomName;
+    private String sessionId;
 
     @Nullable
     private String sdpOffer;
@@ -19,8 +19,8 @@ public class InitiateSessionRequest {
         return userName;
     }
 
-    public String getRoomName() {
-        return roomName;
+    public String getSessionId() {
+        return sessionId;
     }
 
     public String getSdpOffer() {

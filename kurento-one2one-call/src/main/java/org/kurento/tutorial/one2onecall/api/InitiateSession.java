@@ -1,10 +1,12 @@
 package org.kurento.tutorial.one2onecall.api;
 
+import com.amazonaws.services.chime.model.Meeting;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.util.concurrent.CountDownLatch;
 import org.kurento.tutorial.one2onecall.CallMediaPipeline;
-import org.kurento.tutorial.one2onecall.data.InitiateSessionRequest;
+import org.kurento.tutorial.one2onecall.dynamodb.dao.MeetingRoomDAO;
+import org.kurento.tutorial.one2onecall.models.TelehealthSessionRequest;
 import org.kurento.tutorial.one2onecall.room.Room;
 import org.kurento.tutorial.one2onecall.room.RoomManager;
 import org.kurento.tutorial.one2onecall.users.AlexaUserSession;
@@ -25,24 +27,34 @@ public class InitiateSession {
 	@Autowired
 	private RoomManager roomManager;
 
+	@Autowired
+	private MeetingRoomDAO meetingRoomDAO;
+
 	private static final Logger log = LoggerFactory.getLogger(InitiateSession.class);
 	private static final Gson gson = new GsonBuilder().create();
 
 	@PostMapping(value = "/alexa/telehealth/session/initiate", consumes= "application/json")
 	public void initiateSessionWithOffer(
-		@RequestBody InitiateSessionRequest initiateSession) {
+		@RequestBody TelehealthSessionRequest initiateSession) {
 		log.info("Alexa user {} started a session {} with an SDP offer",
-			initiateSession.getUserName(), initiateSession.getRoomName());
+			initiateSession.getUserName(), initiateSession.getSessionId());
+
+		// Check appointment schedule
+
+		// Write into TelehealthSessionTable
+
+		// Write into MeetingRoom table and get room name
+		meetingRoomDAO.addPatientToMeetingRoom(initiateSession.getUserName(), initiateSession.getSessionId());
 
 		// Register Alexa user
-		AlexaUserSession alexaUserSession = new AlexaUserSession(initiateSession.getUserName(), initiateSession.getRoomName(),
+		AlexaUserSession alexaUserSession = new AlexaUserSession(initiateSession.getUserName(), initiateSession.getSessionId(),
 			initiateSession.getSdpOffer());
 		log.info("alexa user room is {}", alexaUserSession.getRoomName());
 		registry.registerAlexaUser(alexaUserSession);
 		log.info("Alexa user {} has been registered successfully", initiateSession.getUserName());
 
 		// Join room
-		Room room = roomManager.getRoom(initiateSession.getRoomName());
+		Room room = roomManager.getRoom(initiateSession.getSessionId());
 		room.joinAsAlexa(initiateSession.getUserName(), alexaUserSession);
 
 		// start the call
