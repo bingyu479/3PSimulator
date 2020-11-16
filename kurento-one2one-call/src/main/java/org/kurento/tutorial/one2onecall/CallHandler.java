@@ -26,6 +26,7 @@ import org.kurento.client.IceCandidate;
 import org.kurento.client.IceCandidateFoundEvent;
 import org.kurento.client.KurentoClient;
 import org.kurento.jsonrpc.JsonUtils;
+import org.kurento.tutorial.one2onecall.models.TelehealthSessionRequest.IceServer;
 import org.kurento.tutorial.one2onecall.room.Room;
 import org.kurento.tutorial.one2onecall.room.RoomManager;
 import org.kurento.tutorial.one2onecall.users.AlexaUserSession;
@@ -109,10 +110,6 @@ public class CallHandler extends TextWebSocketHandler {
 		// Start the session
 		CallMediaPipeline callMediaPipeline = room.getCallMediaPipeline();
 		provider.setWebRtcEndpoint(callMediaPipeline.getProviderWebRtcEp());
-
-//		provider.getWebRtcEndpoint().setStunServerAddress("3.237.192.82");
-//		provider.getWebRtcEndpoint().setStunServerPort(4172);
-//		provider.getWebRtcEndpoint().setTurnUrl("1605127832:tk9fafcdbf-404c-4bda-96d2-402dd262fc0a-us-east-1_1605122432579_0:qYmEjPp03svJDe66GWG4v2q2fGk=@3.81.228.72:443?transport=tcp");
 
 		provider.getWebRtcEndpoint().addIceCandidateFoundListener(
 			new EventListener<IceCandidateFoundEvent>() {

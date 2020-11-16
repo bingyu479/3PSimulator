@@ -1,12 +1,15 @@
 package org.kurento.tutorial.one2onecall.api;
 
-import com.amazonaws.services.chime.model.Meeting;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.concurrent.CountDownLatch;
+import org.kurento.client.WebRtcEndpoint;
 import org.kurento.tutorial.one2onecall.CallMediaPipeline;
 import org.kurento.tutorial.one2onecall.dynamodb.dao.MeetingRoomDAO;
 import org.kurento.tutorial.one2onecall.models.TelehealthSessionRequest;
+import org.kurento.tutorial.one2onecall.models.TelehealthSessionRequest.IceServer;
 import org.kurento.tutorial.one2onecall.room.Room;
 import org.kurento.tutorial.one2onecall.room.RoomManager;
 import org.kurento.tutorial.one2onecall.users.AlexaUserSession;
@@ -61,6 +64,9 @@ public class InitiateSession {
 
 		AlexaUserSession alexa = room.getAlexa();
 		CallMediaPipeline callMediaPipeline = room.getCallMediaPipeline();
+		if (initiateSession.getIceServers() != null) {
+			setIceServers(initiateSession.getIceServers(), callMediaPipeline.getProviderWebRtcEp());
+		}
 
 		// Generate SDP answer for callee (Alexa) and return
 		alexa.setWebRtcEndpoint(callMediaPipeline.getAlexaWebRtcEp());
@@ -82,5 +88,34 @@ public class InitiateSession {
 
 		alexaSdpAnswer = alexa.getWebRtcEndpoint().getLocalSessionDescriptor();
 		alexa.answerGeneratedForSession(alexaSdpAnswer, registry);
+	}
+
+	private void setIceServers(IceServer[] iceServers, WebRtcEndpoint providerWebRtcEp) {
+		try {
+			for (IceServer iceServer : iceServers) {
+				if (iceServer.getUrl().startsWith("stun")) {
+					//url: stun:mrs-2a687c05-1.p.us-east-1.cmds-tachyon.com:4172
+					String stunUrl = iceServer.getUrl();
+					String[] stun = stunUrl.split(":");
+					InetAddress inetAddress = InetAddress.getByName(stun[1]);
+					providerWebRtcEp.setStunServerAddress(inetAddress.getHostAddress());
+					log.info("Stun: {} {}", inetAddress.getHostAddress(), stun[2]);
+					providerWebRtcEp.setStunServerPort(Integer.parseInt(stun[2]));
+				} else {
+					// url: turns:mrs-2a687c05-1.p.us-east-1.cmds-tachyon.com:443?transport=tcp
+					// username: 1605127832:tk9fafcdbf-404c-4bda-96d2-402dd262fc0a-us-east-1_1605122432579_0
+					// credential: qYmEjPp03svJDe66GWG4v2q2fGk=
+					String[] turn = iceServer.getUrl().split(":");
+					InetAddress inetAddress = InetAddress.getByName(turn[1]);
+					String newTurnUrl =
+						iceServer.getUsername() + ":" + iceServer.getCredential() + "@"
+							+ inetAddress.getHostAddress() + ":" + turn[2];
+					log.info("Turn url: {}", newTurnUrl);
+					providerWebRtcEp.setTurnUrl(newTurnUrl);
+				}
+			}
+		} catch (UnknownHostException e) {
+			log.error("UnknownHostException", e);
+		}
 	}
 }

@@ -221,9 +221,29 @@ function onOfferHttpCall(error, offerSdp) {
     console.log('Sending SDP offer for Alexa via InitiateSession API call');
 
     // Call InitiateSession API
+//    const data = {
+//       userName: document.getElementById('name').value,
+//       sessionId: document.getElementById('room').value,
+//       sdpOffer: offerSdp,
+//       iceServers: [{
+//                      url: 'turn:3psimulator-env.eba-j3qpx3j8.us-west-2.elasticbeanstalk.com:4172?transport=udp',
+//                      username: '1605127832:tk9fafcdbf-404c-4bda-96d2-402dd262fc0a-us-east-1_1605122432579_0',
+//                      credential: 'qYmEjPp03svJDe66GWG4v2q2fGk='
+//                  }, {
+//                      url: 'turns:3psimulator-env.eba-j3qpx3j8.us-west-2.elasticbeanstalk.com:443?transport=tcp',
+//                      username: '1605127832:tk9fafcdbf-404c-4bda-96d2-402dd262fc0a-us-east-1_1605122432579_0',
+//                      credential: 'qYmEjPp03svJDe66GWG4v2q2fGk='
+//                  }, {
+//                      url: 'stun:3psimulator-env.eba-j3qpx3j8.us-west-2.elasticbeanstalk.com:4172',
+//                      username: null,
+//                      credential: null
+//                  }]
+//    };
+
+    //For Alexa in web browser
     const data = {
        userName: document.getElementById('name').value,
-       roomName: document.getElementById('room').value,
+       sessionId: document.getElementById('room').value,
        sdpOffer: offerSdp
     };
 
