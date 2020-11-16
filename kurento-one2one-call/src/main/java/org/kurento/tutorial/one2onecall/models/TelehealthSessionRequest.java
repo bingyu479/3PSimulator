@@ -15,6 +15,7 @@ public class TelehealthSessionRequest {
     @Nullable
     private String sdpOffer;
 
+    @Nullable
     private IceServer[] iceServers;
 
     public String getUserName() {

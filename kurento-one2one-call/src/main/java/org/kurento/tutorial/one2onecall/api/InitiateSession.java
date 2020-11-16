@@ -10,6 +10,7 @@ import org.kurento.tutorial.one2onecall.CallMediaPipeline;
 import org.kurento.tutorial.one2onecall.dynamodb.dao.MeetingRoomDAO;
 import org.kurento.tutorial.one2onecall.models.TelehealthSessionRequest;
 import org.kurento.tutorial.one2onecall.models.TelehealthSessionRequest.IceServer;
+import org.kurento.tutorial.one2onecall.models.TelehealthSessionResponse;
 import org.kurento.tutorial.one2onecall.room.Room;
 import org.kurento.tutorial.one2onecall.room.RoomManager;
 import org.kurento.tutorial.one2onecall.users.AlexaUserSession;
@@ -36,8 +37,9 @@ public class InitiateSession {
 	private static final Logger log = LoggerFactory.getLogger(InitiateSession.class);
 	private static final Gson gson = new GsonBuilder().create();
 
-	@PostMapping(value = "/alexa/telehealth/session/initiate", consumes= "application/json")
-	public void initiateSessionWithOffer(
+	@PostMapping(value = "/alexa/telehealth/session/initiate",
+		consumes= "application/json", produces = "application/json")
+	public TelehealthSessionResponse initiateSessionWithOffer(
 		@RequestBody TelehealthSessionRequest initiateSession) {
 		log.info("Alexa user {} started a session {} with an SDP offer",
 			initiateSession.getUserName(), initiateSession.getSessionId());
@@ -88,6 +90,7 @@ public class InitiateSession {
 
 		alexaSdpAnswer = alexa.getWebRtcEndpoint().getLocalSessionDescriptor();
 		alexa.answerGeneratedForSession(alexaSdpAnswer, registry);
+		return new TelehealthSessionResponse(initiateSession.getUserName(), initiateSession.getSessionId(), alexaSdpAnswer);
 	}
 
 	private void setIceServers(IceServer[] iceServers, WebRtcEndpoint providerWebRtcEp) {
