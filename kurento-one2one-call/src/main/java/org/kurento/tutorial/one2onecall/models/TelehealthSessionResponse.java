@@ -13,7 +13,7 @@ public class TelehealthSessionResponse {
     private String sessionId;
 
     @Nullable
-    private String sdpOffer;
+    private String sdpAnswer;
 
     public String getUserName() {
         return userName;
@@ -32,11 +32,11 @@ public class TelehealthSessionResponse {
     }
 
     @Nullable
-    public String getSdpOffer() {
-        return sdpOffer;
+    public String getSdpAnswer() {
+        return sdpAnswer;
     }
 
-    public void setSdpOffer(@Nullable String sdpOffer) {
-        this.sdpOffer = sdpOffer;
+    public void setSdpAnswer(@Nullable String sdpAnswer) {
+        this.sdpAnswer = sdpAnswer;
     }
 }
