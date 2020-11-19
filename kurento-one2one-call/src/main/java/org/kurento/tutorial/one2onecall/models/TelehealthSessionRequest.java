@@ -1,6 +1,5 @@
 package org.kurento.tutorial.one2onecall.models;
 
-import javax.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -12,10 +11,8 @@ public class TelehealthSessionRequest {
 
     private String sessionId;
 
-    @Nullable
     private String sdpOffer;
 
-    @Nullable
     private IceServer[] iceServers;
 
     public String getUserName() {

@@ -34,13 +34,4 @@ public class WebUserSession extends UserSession {
 			session.sendMessage(new TextMessage(message.toString()));
 		}
 	}
-
-	public void leaveRoom() throws IOException {
-		this.webRtcEndpoint = null;
-		this.candidateList.clear();
-		JsonObject message = new JsonObject();
-		message.addProperty("id", "stopCommunication");
-		this.sendMessage(message);
-	}
-
 }

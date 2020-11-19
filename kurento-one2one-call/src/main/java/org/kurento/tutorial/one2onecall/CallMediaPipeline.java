@@ -17,6 +17,7 @@
 
 package org.kurento.tutorial.one2onecall;
 
+import org.kurento.client.GStreamerFilter;
 import org.kurento.client.KurentoClient;
 import org.kurento.client.MediaPipeline;
 import org.kurento.client.WebRtcEndpoint;
@@ -41,6 +42,12 @@ public class CallMediaPipeline {
 			this.providerWebRtcEp = new WebRtcEndpoint.Builder(pipeline).build();
 			this.alexaWebRtcEp = new WebRtcEndpoint.Builder(pipeline).build();
 
+//			GStreamerFilter filter = new GStreamerFilter
+//				.Builder(pipeline, "textoverlay font-desc=\"Sans 24\" text=\"TEST\" "
+//				+ "valignment=top halignment=left shaded-background=true").build();
+//			this.providerWebRtcEp.connect(filter);
+//			filter.connect(this.alexaWebRtcEp);
+//
 			this.providerWebRtcEp.connect(this.alexaWebRtcEp);
 			this.alexaWebRtcEp.connect(this.providerWebRtcEp);
 		} catch (Throwable t) {
@@ -54,6 +61,18 @@ public class CallMediaPipeline {
 		if (pipeline != null) {
 			pipeline.release();
 		}
+	}
+
+	public void updateAlexaWebRtcEp() {
+		this.providerWebRtcEp.disconnect(this.alexaWebRtcEp);
+		this.alexaWebRtcEp.disconnect(this.providerWebRtcEp);
+		this.alexaWebRtcEp.release();
+		this.providerWebRtcEp.release();
+		// New WebRtcEp for Alexa
+		this.alexaWebRtcEp = new WebRtcEndpoint.Builder(pipeline).build();
+		this.providerWebRtcEp = new WebRtcEndpoint.Builder(pipeline).build();
+		this.providerWebRtcEp.connect(this.alexaWebRtcEp);
+		this.alexaWebRtcEp.connect(this.providerWebRtcEp);
 	}
 
 	public WebRtcEndpoint getProviderWebRtcEp() {

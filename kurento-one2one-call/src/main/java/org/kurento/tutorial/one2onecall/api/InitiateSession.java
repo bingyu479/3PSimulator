@@ -1,7 +1,5 @@
 package org.kurento.tutorial.one2onecall.api;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.concurrent.CountDownLatch;
@@ -35,7 +33,6 @@ public class InitiateSession {
 	private MeetingRoomDAO meetingRoomDAO;
 
 	private static final Logger log = LoggerFactory.getLogger(InitiateSession.class);
-	private static final Gson gson = new GsonBuilder().create();
 
 	@PostMapping(value = "/alexa/telehealth/session/initiate",
 		consumes= "application/json", produces = "application/json")
@@ -49,7 +46,7 @@ public class InitiateSession {
 		// Write into TelehealthSessionTable
 
 		// Write into MeetingRoom table and get room name
-		meetingRoomDAO.addPatientToMeetingRoom(initiateSession.getUserName(), initiateSession.getSessionId());
+//		meetingRoomDAO.addPatientToMeetingRoom(initiateSession.getUserName(), initiateSession.getSessionId());
 
 		// Register Alexa user
 		AlexaUserSession alexaUserSession = new AlexaUserSession(initiateSession.getUserName(), initiateSession.getSessionId(),
@@ -75,7 +72,7 @@ public class InitiateSession {
 
 		log.info("Alexa SDP: {} ", alexa.getSdpOffer());
 		log.info("Generating SDP answer for Alexa");
-		String alexaSdpAnswer = alexa.getWebRtcEndpoint().processOffer(alexa.getSdpOffer());
+		String alexaSdpAnswer = alexa.getWebRtcEndpoint().processOffer(initiateSession.getSdpOffer());
 		final CountDownLatch latch = new CountDownLatch(1);
 		alexa.getWebRtcEndpoint().addOnIceGatheringDoneListener(event -> {
 			latch.countDown();
@@ -89,7 +86,7 @@ public class InitiateSession {
 		}
 
 		alexaSdpAnswer = alexa.getWebRtcEndpoint().getLocalSessionDescriptor();
-//		alexa.answerGeneratedForSession(alexaSdpAnswer, registry);
+		alexa.answerGeneratedForSession(alexaSdpAnswer, registry);
 		return new TelehealthSessionResponse(initiateSession.getUserName(), initiateSession.getSessionId(), alexaSdpAnswer);
 	}
 

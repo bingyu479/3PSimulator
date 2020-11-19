@@ -66,6 +66,7 @@ public class CallHandler extends TextWebSocketHandler {
 	public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 		JsonObject jsonMessage = gson.fromJson(message.getPayload(), JsonObject.class);
 		UserSession user = registry.getBySession(session);
+		log.info("Get websocket message from session: {}", session.getId());
 
 		if (user != null) {
 			log.debug("Incoming message from user '{}': {}", user.getName(), jsonMessage);
@@ -93,8 +94,13 @@ public class CallHandler extends TextWebSocketHandler {
 					user.addCandidate(iceCandidate);
 				}
 				break;
+			case "updatedSdpAnswer":
+				String updatedSdpAnswer = jsonMessage.getAsJsonPrimitive("sdpAnswer").getAsString();
+				String roomName = jsonMessage.getAsJsonPrimitive("room").getAsString();
+				reNegotiateWithSdpAnswer(roomName, updatedSdpAnswer);
+				break;
 			case "stop":
-				stop(session);
+				stop(jsonMessage.getAsJsonPrimitive("room").getAsString());
 				break;
 			default:
 				break;
@@ -144,6 +150,14 @@ public class CallHandler extends TextWebSocketHandler {
 		provider.getWebRtcEndpoint().gatherCandidates();
 	}
 
+	private void reNegotiateWithSdpAnswer(String roomName, String updatedSdpAnswer) {
+		Room room = roomManager.getRoom(roomName);
+
+		WebUserSession provider = room.getProvider();
+		provider.getWebRtcEndpoint().processAnswer(updatedSdpAnswer);
+		log.info("Updated SDP answer has been processed by provider");
+	}
+
 	private void handleErrorResponse(Throwable throwable, WebSocketSession session,
 		String responseId)
 		throws IOException {
@@ -161,15 +175,9 @@ public class CallHandler extends TextWebSocketHandler {
 
 		WebUserSession caller = new WebUserSession(session, name, null);
 		String responseMsg = "accepted";
-		if (name.isEmpty()) {
-			responseMsg = "rejected: empty user name";
-		} else if (registry.exists(name)) {
-			responseMsg = "rejected: user '" + name + "' already registered";
-		} else {
-			registry.registerWebUser(caller);
-		}
+		registry.registerWebUser(caller);
 
-		log.info("Web user {} has been registered successfully", name);
+		log.info("Web user {} has been registered successfully, sessionId is {}", name, session.getId());
 		JsonObject response = new JsonObject();
 		response.addProperty("id", "registerResponse");
 		response.addProperty("response", responseMsg);
@@ -189,28 +197,20 @@ public class CallHandler extends TextWebSocketHandler {
 		return webUserSession;
 	}
 
-	public void stop(WebSocketSession session) throws IOException {
+	public void stop(String roomName) throws IOException {
 		// Both users can stop the communication. A 'stopCommunication'
 		// message will be sent to the other peer.
-		UserSession stopperUser = registry.getBySession(session);
-
-		Room room = roomManager.getRoom(stopperUser.getRoomName());
-		if (stopperUser instanceof WebUserSession) {
-			// if stopperUser is a provider, stoppedUser should be Alexa
-			AlexaUserSession stoppedUser = room.getAlexa();
-			stoppedUser.leaveRoom(registry);
-		} else {
-			WebUserSession stoppedUser = room.getProvider();
-			stoppedUser.leaveRoom();
-		}
+		Room room = roomManager.getRoom(roomName);
 		room.getCallMediaPipeline().release();
 		roomManager.removeRoom(room);
 	}
 
 	@Override
-	public void afterConnectionClosed(WebSocketSession session, CloseStatus status)
-		throws Exception {
-		registry.removeBySession(session);
+	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) {
+		log.info("Connection is closed");
+		UserSession stopperUser = registry.getBySession(session);
+		Room room = roomManager.getRoom(stopperUser.getRoomName());
+		roomManager.removeRoom(room);
 	}
 
 }

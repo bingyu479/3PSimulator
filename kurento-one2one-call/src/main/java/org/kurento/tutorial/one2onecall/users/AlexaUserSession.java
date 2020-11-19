@@ -38,11 +38,4 @@ public class AlexaUserSession extends UserSession {
 			e.printStackTrace();
 		}
 	}
-
-	public void leaveRoom(UserRegistry registry) {
-		this.webRtcEndpoint = null;
-		JsonObject message = new JsonObject();
-		message.addProperty("id", "stopCommunication");
-		this.sendMessage(message, registry);
-	}
 }

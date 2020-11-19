@@ -110,10 +110,13 @@ ws.onmessage = function(message) {
 	case 'startCommunication':
         startCommunication(parsedMessage);
         break;
+    case 'updatedSdpOffer':
+        reNegotiateWithOffer(parsedMessage);
+        break;
     case 'stopCommunication':
-            console.info('Communication ended by remote peer');
-            stop(true);
-            break;
+        console.info('Communication ended by remote peer');
+        stop(true);
+        break;
 	default:
 		console.error('Unrecognized message', parsedMessage);
 	}
@@ -259,6 +262,36 @@ function onOfferHttpCall(error, offerSdp) {
     });
 }
 
+function reNegotiateWithOffer(message) {
+
+    var options = {
+		localVideo : videoInput,
+		remoteVideo : videoOutput,
+		onicecandidate : onIceCandidate,
+		onerror : onError
+	}
+    webRtcPeer = new kurentoUtils.WebRtcPeer.WebRtcPeerSendrecv(options,
+        function(error) {
+            if (error) {
+                return console.error(error);
+            }
+            webRtcPeer.processOffer(message.sdpOffer, onReNegotiation);
+        });
+}
+
+function onReNegotiation(error, sdpAnswer) {
+    if (error)
+    		return console.error('Error generating the offer');
+    console.log('Provider: Sending SDP answer for re-negotiation');
+    var message = {
+        id : 'updatedSdpAnswer',
+        provider : document.getElementById('name').value,
+        room : document.getElementById('room').value,
+        sdpAnswer : sdpAnswer
+    };
+    sendMessage(message);
+}
+
 function stop(message) {
 	setCallState(NO_CALL);
 	if (webRtcPeer) {
@@ -267,7 +300,8 @@ function stop(message) {
 
 		if (!message) {
 			var message = {
-				id : 'stop'
+				id : 'stop',
+				room : document.getElementById('room').value
 			}
 			sendMessage(message);
 		}

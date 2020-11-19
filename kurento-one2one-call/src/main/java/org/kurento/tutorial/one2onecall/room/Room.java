@@ -53,6 +53,7 @@ public class Room implements Closeable {
 
 		provider = null;
 		alexa = null;
+		callMediaPipeline = null;
 
 		log.info("Room {} closed", this.roomName);
 	}
