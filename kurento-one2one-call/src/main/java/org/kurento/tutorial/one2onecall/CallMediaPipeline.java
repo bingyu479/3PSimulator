@@ -42,13 +42,6 @@ public class CallMediaPipeline {
 			this.providerWebRtcEp = new WebRtcEndpoint.Builder(pipeline).build();
 			this.alexaWebRtcEp = new WebRtcEndpoint.Builder(pipeline).build();
 
-//			GStreamerFilter filter = new GStreamerFilter
-//				.Builder(pipeline, "textoverlay font-desc=\"Sans 24\" text=\"TEST\" "
-//				+ "valignment=top halignment=left shaded-background=true").build();
-//			this.providerWebRtcEp.connect(filter);
-//			filter.connect(this.alexaWebRtcEp);
-//
-			this.providerWebRtcEp.connect(this.alexaWebRtcEp);
 			this.alexaWebRtcEp.connect(this.providerWebRtcEp);
 		} catch (Throwable t) {
 			if (this.pipeline != null) {
@@ -61,6 +54,14 @@ public class CallMediaPipeline {
 		if (pipeline != null) {
 			pipeline.release();
 		}
+	}
+
+	public MediaPipeline getPipeline() {
+		return pipeline;
+	}
+
+	public void setPipeline(MediaPipeline pipeline) {
+		this.pipeline = pipeline;
 	}
 
 	public void updateAlexaWebRtcEp() {

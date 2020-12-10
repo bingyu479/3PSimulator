@@ -63,10 +63,6 @@ public class UserSession {
 		this.sdpOffer = sdpOffer;
 	}
 
-	public WebRtcEndpoint getWebRtcEndpoint() {
-		return webRtcEndpoint;
-	}
-
 	public void setWebRtcEndpoint(WebRtcEndpoint webRtcEndpoint) {
 		this.webRtcEndpoint = webRtcEndpoint;
 

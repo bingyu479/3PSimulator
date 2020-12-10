@@ -72,20 +72,20 @@ public class InitiateSession {
 
 		log.info("Alexa SDP: {} ", alexa.getSdpOffer());
 		log.info("Generating SDP answer for Alexa");
-		String alexaSdpAnswer = alexa.getWebRtcEndpoint().processOffer(initiateSession.getSdpOffer());
+		String alexaSdpAnswer = callMediaPipeline.getAlexaWebRtcEp().processOffer(initiateSession.getSdpOffer());
 		final CountDownLatch latch = new CountDownLatch(1);
-		alexa.getWebRtcEndpoint().addOnIceGatheringDoneListener(event -> {
+		callMediaPipeline.getAlexaWebRtcEp().addOnIceGatheringDoneListener(event -> {
 			latch.countDown();
 		});
 
-		alexa.getWebRtcEndpoint().gatherCandidates();
+		callMediaPipeline.getAlexaWebRtcEp().gatherCandidates();
 		try {
 			latch.await();
 		} catch (InterruptedException e) {
 			// Should not reach here
 		}
 
-		alexaSdpAnswer = alexa.getWebRtcEndpoint().getLocalSessionDescriptor();
+		alexaSdpAnswer = callMediaPipeline.getAlexaWebRtcEp().getLocalSessionDescriptor();
 		alexa.answerGeneratedForSession(alexaSdpAnswer, registry);
 		return new TelehealthSessionResponse(initiateSession.getUserName(), initiateSession.getSessionId(), alexaSdpAnswer);
 	}

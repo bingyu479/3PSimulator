@@ -22,6 +22,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import java.io.IOException;
 import org.kurento.client.EventListener;
+import org.kurento.client.GStreamerFilter;
 import org.kurento.client.IceCandidate;
 import org.kurento.client.IceCandidateFoundEvent;
 import org.kurento.client.KurentoClient;
@@ -117,7 +118,14 @@ public class CallHandler extends TextWebSocketHandler {
 		CallMediaPipeline callMediaPipeline = room.getCallMediaPipeline();
 		provider.setWebRtcEndpoint(callMediaPipeline.getProviderWebRtcEp());
 
-		provider.getWebRtcEndpoint().addIceCandidateFoundListener(
+		GStreamerFilter filter = new GStreamerFilter
+			.Builder(callMediaPipeline.getPipeline(), "textoverlay font-desc=\"Sans 24\" text="
+			+ "\"" + provider.getName() + "\""
+			+ " valignment=top halignment=left shaded-background=true").build();
+		callMediaPipeline.getProviderWebRtcEp().connect(filter);
+		filter.connect(callMediaPipeline.getAlexaWebRtcEp());
+
+		callMediaPipeline.getProviderWebRtcEp().addIceCandidateFoundListener(
 			new EventListener<IceCandidateFoundEvent>() {
 				@Override
 				public void onEvent(IceCandidateFoundEvent event) {
@@ -136,7 +144,7 @@ public class CallHandler extends TextWebSocketHandler {
 
 		// Generate SDP answer for caller(Provider)
 		log.info("Provider SDP: {} ", provider.getSdpOffer());
-		String callerSdpAnswer = provider.getWebRtcEndpoint().processOffer(provider.getSdpOffer());
+		String callerSdpAnswer = callMediaPipeline.getProviderWebRtcEp().processOffer(provider.getSdpOffer());
 		JsonObject startCommunication = new JsonObject();
 		startCommunication.addProperty("id", "startCommunication");
 		startCommunication.addProperty("sdpAnswer", callerSdpAnswer);
@@ -147,14 +155,13 @@ public class CallHandler extends TextWebSocketHandler {
 			e.printStackTrace();
 		}
 		log.info("SDP answer is generated for provider");
-		provider.getWebRtcEndpoint().gatherCandidates();
+		callMediaPipeline.getProviderWebRtcEp().gatherCandidates();
 	}
 
 	private void reNegotiateWithSdpAnswer(String roomName, String updatedSdpAnswer) {
 		Room room = roomManager.getRoom(roomName);
 
-		WebUserSession provider = room.getProvider();
-		provider.getWebRtcEndpoint().processAnswer(updatedSdpAnswer);
+		room.getCallMediaPipeline().getProviderWebRtcEp().processAnswer(updatedSdpAnswer);
 		log.info("Updated SDP answer has been processed by provider");
 	}
 

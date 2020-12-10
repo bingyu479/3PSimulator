@@ -50,19 +50,19 @@ public class UpdateSession {
 
         // Generate SDP answer for the updated offer
         log.info("Generating updated SDP answer for Alexa");
-        String alexaSdpAnswer = alexa.getWebRtcEndpoint().processOffer(updateSession.getSdpOffer());
+        String alexaSdpAnswer = callMediaPipeline.getAlexaWebRtcEp().processOffer(updateSession.getSdpOffer());
         final CountDownLatch latch = new CountDownLatch(1);
-        alexa.getWebRtcEndpoint().addOnIceGatheringDoneListener(event -> {
+        callMediaPipeline.getAlexaWebRtcEp().addOnIceGatheringDoneListener(event -> {
             latch.countDown();
         });
 
-        alexa.getWebRtcEndpoint().gatherCandidates();
+        callMediaPipeline.getAlexaWebRtcEp().gatherCandidates();
         try {
             latch.await();
         } catch (InterruptedException e) {
             // Should not reach here
         }
-        alexaSdpAnswer = alexa.getWebRtcEndpoint().getLocalSessionDescriptor();
+        alexaSdpAnswer = callMediaPipeline.getAlexaWebRtcEp().getLocalSessionDescriptor();
 
 
         // Trigger a re-negotiate process on provider side
@@ -95,7 +95,7 @@ public class UpdateSession {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        room.getProvider().getWebRtcEndpoint().gatherCandidates();
+        callMediaPipeline.getProviderWebRtcEp().gatherCandidates();
 
 		alexa.answerGeneratedForSession(alexaSdpAnswer, registry);
         return new TelehealthSessionResponse(updateSession.getUserName(), updateSession.getSessionId(), alexaSdpAnswer);
