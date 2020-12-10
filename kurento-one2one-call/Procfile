@@ -1,1 +1,1 @@
-web: java -Dkms.url=ws://kurentomediaserverlb-615494198.us-west-2.elb.amazonaws.com/kurento -jar kurento-one2one-call-6.14.1-SNAPSHOT-exec.jar
+web: java -Dkms.url=ws://KurentoMediaServerALB-2055266604.us-west-2.elb.amazonaws.com/kurento -jar kurento-one2one-call-6.14.1-SNAPSHOT-exec.jar
