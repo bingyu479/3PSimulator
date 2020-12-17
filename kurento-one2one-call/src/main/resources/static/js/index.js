@@ -58,18 +58,24 @@ function setCallState(nextState) {
 	case NO_CALL:
 		enableButton('#joinAsDoctor', 'joinAsDoctor()');
 		enableButton('#joinAsAlexa', 'joinAsAlexa()');
+		enableButton('#toggleMute', 'toggleMute()');
+        enableButton('#toggleVideo', 'toggleVideo()');
 		disableButton('#terminate');
 		disableButton('#play');
 		break;
 	case PROCESSING_CALL:
 		disableButton('#joinAsDoctor');
 		disableButton('#joinAsAlexa');
+		enableButton('#toggleMute', 'toggleMute()');
+        enableButton('#toggleVideo', 'toggleVideo()');
 		disableButton('#terminate');
 		disableButton('#play');
 		break;
 	case IN_CALL:
 		disableButton('#joinAsDoctor');
 		disableButton('#joinAsAlexa');
+		enableButton('#toggleMute', 'toggleMute()');
+		enableButton('#toggleVideo', 'toggleVideo()');
 		enableButton('#terminate', 'stop()');
 		disableButton('#play');
 		break;
@@ -173,6 +179,32 @@ function joinAsDoctor() {
 			});
 }
 
+function toggleMute() {
+    var text = $('#toggleMute').text();
+    if (text == 'Mute') {
+        webRtcPeer.audioEnabled = false;
+        $("#toggleMute > span").text("Unmute");
+        $('#toggleMute > i').toggleClass('fa-microphone').toggleClass('fa-microphone-slash');
+    } else if (text == 'Unmute') {
+        webRtcPeer.audioEnabled = true;
+        $("#toggleMute > span").text("Mute");
+        $('#toggleMute > i').toggleClass('fa-microphone-slash').toggleClass('fa-microphone');
+    }
+}
+
+function toggleVideo() {
+    var text = $('#toggleVideo').text();
+    if (text == 'Video Off') {
+        webRtcPeer.videoEnabled = false;
+        $("#toggleVideo > span").text("Video On");
+        $('#toggleVideo > i').toggleClass('fa-video').toggleClass('fa-video-slash');
+    } else if (text == 'Video On') {
+        webRtcPeer.videoEnabled = true;
+        $("#toggleVideo > span").text("Video Off");
+        $('#toggleVideo > i').toggleClass('fa-video-slash').toggleClass('fa-video');
+    }
+}
+
 // When doctor receive the SDP answer from App server (from calleeWebRtcEp)
 function startCommunication(message) {
 	setCallState(IN_CALL);
@@ -193,6 +225,32 @@ function onOfferCall(error, offerSdp) {
 		sdpOffer : offerSdp
 	};
 	sendMessage(message);
+}
+
+function disableVideoOffer(error, offerSdp) {
+    if (error)
+        return console.error('Error generating the offer');
+    console.log('Sending an updated SDP offer for doctor via WebSocket to disable the video');
+    var message = {
+        id : 'disableVideoOffer',
+        provider : document.getElementById('name').value,
+        room : document.getElementById('room').value,
+        sdpOffer : offerSdp
+    };
+    sendMessage(message);
+}
+
+function muteAudioOffer(error, offerSdp) {
+    if (error)
+        return console.error('Error generating the offer');
+    console.log('Sending an updated SDP offer for doctor via WebSocket to mute the audio');
+    var message = {
+        id : 'muteProviderOffer',
+        provider : document.getElementById('name').value,
+        room : document.getElementById('room').value,
+        sdpOffer : offerSdp
+    };
+    sendMessage(message);
 }
 
 function joinAsAlexa() {
