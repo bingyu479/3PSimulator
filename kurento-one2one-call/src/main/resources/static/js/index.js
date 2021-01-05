@@ -76,7 +76,8 @@ function setCallState(nextState) {
 		disableButton('#joinAsAlexa');
 		enableButton('#toggleMute', 'toggleMute()');
 		enableButton('#toggleVideo', 'toggleVideo()');
-		enableButton('#terminate', 'stop()');
+		enableButton('#leave', 'leave()');
+		enableButton('#terminate', 'terminate()');
 		disableButton('#play');
 		break;
 	default:
@@ -118,10 +119,6 @@ ws.onmessage = function(message) {
         break;
     case 'updatedSdpOffer':
         reNegotiateWithOffer(parsedMessage);
-        break;
-    case 'stopCommunication':
-        console.info('Communication ended by remote peer');
-        stop(true);
         break;
 	default:
 		console.error('Unrecognized message', parsedMessage);
@@ -265,6 +262,7 @@ function joinAsAlexa() {
 		localVideo : videoInput,
 		remoteVideo : videoOutput,
 		onicecandidate : onIceCandidate,
+        dataChannels : true,
 		onerror : onError
 	}
 	webRtcPeer = new kurentoUtils.WebRtcPeer.WebRtcPeerSendrecv(options,
@@ -350,7 +348,24 @@ function onReNegotiation(error, sdpAnswer) {
     sendMessage(message);
 }
 
-function stop(message) {
+function leave() {
+    setCallState(NO_CALL);
+    if (webRtcPeer) {
+    		webRtcPeer.dispose();
+    		webRtcPeer = null;
+
+    		if (!message) {
+    			var message = {
+    				id : 'leave',
+    				room : document.getElementById('room').value
+    			}
+    			sendMessage(message);
+    		}
+    	}
+    	hideSpinner(videoInput, videoOutput);
+}
+
+function terminate(message) {
 	setCallState(NO_CALL);
 	if (webRtcPeer) {
 		webRtcPeer.dispose();
@@ -358,7 +373,7 @@ function stop(message) {
 
 		if (!message) {
 			var message = {
-				id : 'stop',
+				id : 'terminate',
 				room : document.getElementById('room').value
 			}
 			sendMessage(message);

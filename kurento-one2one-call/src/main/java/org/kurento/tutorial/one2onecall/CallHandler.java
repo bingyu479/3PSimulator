@@ -100,8 +100,11 @@ public class CallHandler extends TextWebSocketHandler {
 				String roomName = jsonMessage.getAsJsonPrimitive("room").getAsString();
 				reNegotiateWithSdpAnswer(roomName, updatedSdpAnswer);
 				break;
-			case "stop":
-				stop(jsonMessage.getAsJsonPrimitive("room").getAsString());
+            case "leave":
+                leaveRoom(jsonMessage.getAsJsonPrimitive("room").getAsString());
+                break;
+            case "terminate":
+                terminate(jsonMessage.getAsJsonPrimitive("room").getAsString());
 				break;
 			default:
 				break;
@@ -204,7 +207,11 @@ public class CallHandler extends TextWebSocketHandler {
 		return webUserSession;
 	}
 
-	public void stop(String roomName) throws IOException {
+	public void leaveRoom(String roomName) {
+
+    }
+
+	public void terminate(String roomName) {
 		// Both users can stop the communication. A 'stopCommunication'
 		// message will be sent to the other peer.
 		Room room = roomManager.getRoom(roomName);

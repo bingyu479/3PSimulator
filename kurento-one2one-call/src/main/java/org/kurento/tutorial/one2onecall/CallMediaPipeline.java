@@ -40,7 +40,7 @@ public class CallMediaPipeline {
 		try {
 			this.pipeline = kurento.createMediaPipeline();
 			this.providerWebRtcEp = new WebRtcEndpoint.Builder(pipeline).build();
-			this.alexaWebRtcEp = new WebRtcEndpoint.Builder(pipeline).build();
+			this.alexaWebRtcEp = new WebRtcEndpoint.Builder(pipeline).useDataChannels().build();
 
 			this.alexaWebRtcEp.connect(this.providerWebRtcEp);
 		} catch (Throwable t) {
