@@ -28,6 +28,7 @@ body {
 
 video, #console {
 	display: block;
+	width: 100%;
 	font-size: 14px;
 	line-height: 1.42857143;
 	color: #555;
@@ -54,7 +55,6 @@ video, #console {
 }
 
 #videoBig {
-	width: 640px;
 	height: 480px;
 	top: 0;
 	left: 0;
@@ -67,7 +67,7 @@ div#videoSmall {
 	padding: 0px;
 	position: absolute;
 	top: 15px;
-	left: 400px;
+	right: 30px;
 	cursor: pointer;
 	z-index: 10;
 	padding: 0px;

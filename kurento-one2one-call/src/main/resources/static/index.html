@@ -51,64 +51,32 @@
 	</header>
 	<div class="container">
 		<div class="page-header">
-			<h1>Tutorial 4: Video Call 1 to 1 with WebRTC</h1>
-			<p>
-				This web application consists on an one to one video call using <a
-					href="http://www.webrtc.org/">WebRTC</a>. In other words, this
-				application is similar to a phone but also with video. The <a
-					href="img/pipeline.png" data-toggle="lightbox"
-					data-title="Video Call 1 to 1 Media Pipeline"
-					data-footer="Two interconnected WebRtcEnpoints Media Elements">Media
-					Pipeline</a> is composed by two interconnected <i>WebRtcEndpoints</i>.
-				To run this demo follow these steps:
-			</p>
-			<ol>
-				<li>Open this page with a browser compliant with WebRTC
-					(Chrome, Firefox).</li>
-				<li>Type a nick in the field <i>Name</i> and click on <i>Register</i>.
-				</li>
-				<li>In a different machine (or a different tab in the same
-					browser) follow the same procedure to register another user.</li>
-				<li>Type the name of the user to be called in the field <i>Peer</i>
-					and click <i>Call</i>.
-				</li>
-				<li>Grant the access to the camera and microphone for both
-					users. After the SDP negotiation the communication should start.</li>
-				<li>The called user should accept the incoming call (by a
-					confirmation dialog).</li>
-				<li>Click on <i>Stop</i> to finish the communication.
-				</li>
-			</ol>
+			<h1>Demo: Video Call with Telehealth</h1>
 		</div>
 		<div class="row">
-			<div class="col-md-5">
-				<label class="control-label" for="name">Name</label>
-				<div class="row">
-					<div class="col-md-6">
-						<input id="name" name="name" class="form-control" type="text"
-							onkeydown="if (event.keyCode == 13) register();" />
-					</div>
-					<div class="col-md-6 text-right">
-						<a id="register" href="#" class="btn btn-primary"><span
-							class="glyphicon glyphicon-plus"></span> Register</a>
-					</div>
-				</div>
+			<div class="col-md-6 col-md-offset-3">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Name</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="name" placeholder="Name" onkeydown="if (event.keyCode == 13) register();" />
+						</div>
+						<div class="col-md-6 text-right">
 
-				<br /> <br /> <label class="control-label" for="room">Room</label>
-				<div class="row">
-					<div class="col-md-6">
-						<input id="room" name="room" class="form-control" type="text">
+						</div>
 					</div>
-					<div class="col-md-6 text-right">
-						<a id="joinAsDoctor" href="#" class="btn btn-success"><span
-							class="glyphicon glyphicon-play"></span>Join As Doctor</a>
-						<a id="toggleMute" href="#" class="btn btn-success"><i class="fas fa-microphone"></i><span>Mute</span></a>
-						<a id="toggleVideo" href="#" class="btn btn-success"><i class="fas fa-video"></i><span>Video Off</span></a>
-						<a id="joinAsAlexa" href="#" class="btn btn-success"><span
-							class="glyphicon glyphicon-play"></span>Join As Alexa</a>
-						<a id="terminate"
-							href="#" class="btn btn-danger"><span
-							class="glyphicon glyphicon-stop"></span> Leave Room</a>
+					<div class="form-group">
+						<label for="room" class="col-sm-2 control-label">Room</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="room" placeholder="RoomId">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-1 col-sm-10">
+							<button id="joinAsDoctor" type="button" class="btn btn-success">Join As Doctor</button>
+							<button id="joinAsAlexa" type="button" class="btn btn-success">Join As Alexa</button>
+							<button id="register" type="button" class="btn btn-primary"> Register</button>
+						</div>
 					</div>
 				</div>
 				<br /> <label class="control-label" for="console">Console</label><br>
@@ -117,14 +85,21 @@
 					<ul></ul>
 				</div>
 			</div>
-			<div class="col-md-7">
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
 				<div id="videoBig">
 					<video id="videoOutput" autoplay width="640px" height="480px"
 						poster="img/webrtc.png"></video>
 				</div>
 				<div id="videoSmall">
 					<video id="videoInput" autoplay width="240px" height="180px"
-						poster="img/webrtc.png"></video>
+						poster="img/alexa-logo1.jpg"></video>
+				</div>
+				<div>
+					<a id="toggleMute" href="#" class="btn btn-success"><i class="fas fa-microphone"></i><span>Mute</span></a>
+					<a id="toggleVideo" href="#" class="btn btn-success"><i class="fas fa-video"></i><span>Video Off</span></a>
+					<a id="terminate" href="#" class="btn btn-danger"><span class="glyphicon glyphicon-stop"></span> Leave Room</a>
 				</div>
 			</div>
 		</div>

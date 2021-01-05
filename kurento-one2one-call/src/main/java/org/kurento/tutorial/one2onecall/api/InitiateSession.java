@@ -86,7 +86,7 @@ public class InitiateSession {
 		}
 
 		alexaSdpAnswer = callMediaPipeline.getAlexaWebRtcEp().getLocalSessionDescriptor();
-//		alexa.answerGeneratedForSession(alexaSdpAnswer, registry);
+		alexa.answerGeneratedForSession(alexaSdpAnswer, registry);
 		return new TelehealthSessionResponse(initiateSession.getUserName(), initiateSession.getSessionId(), alexaSdpAnswer);
 	}
 
