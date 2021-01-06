@@ -97,7 +97,7 @@ public class UpdateSession {
         }
         callMediaPipeline.getProviderWebRtcEp().gatherCandidates();
 
-		alexa.answerGeneratedForSession(alexaSdpAnswer, registry);
+//		alexa.answerGeneratedForSession(alexaSdpAnswer, registry);
         return new TelehealthSessionResponse(updateSession.getUserName(), updateSession.getSessionId(), alexaSdpAnswer);
     }
 }
