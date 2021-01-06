@@ -45,18 +45,29 @@ public class RoomManager {
 	 * @return the room if it was already created, or a new one if it is the first time this room is
 	 * accessed
 	 */
-	public Room getRoom(String roomName) {
+	public Room getRoomOrCreate(String roomName) {
 		log.info("Searching for room {}", roomName);
 		Room room = rooms.get(roomName);
 
 		if (room == null) {
-			log.info("Room {} not existent. Will create now!", roomName);
+			log.info("Room {} not exist. Will create now!", roomName);
 			room = new Room(roomName, new CallMediaPipeline(kurento));
 			rooms.put(roomName, room);
 		}
 		log.info("Room {} found!", roomName);
 		return room;
 	}
+
+	public Room getRoomOrThrow(String roomName) {
+        log.info("Searching for room {}", roomName);
+        Room room = rooms.get(roomName);
+
+        if (room == null) {
+            throw new IllegalStateException(String.format("The session %s doesn't exist anymore.", roomName));
+        }
+        log.info("Room {} found!", roomName);
+        return room;
+    }
 
 	/**
 	 * Removes a room from the list of available rooms.

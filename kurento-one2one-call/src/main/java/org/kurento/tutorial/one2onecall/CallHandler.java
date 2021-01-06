@@ -27,10 +27,8 @@ import org.kurento.client.IceCandidate;
 import org.kurento.client.IceCandidateFoundEvent;
 import org.kurento.client.KurentoClient;
 import org.kurento.jsonrpc.JsonUtils;
-import org.kurento.tutorial.one2onecall.models.TelehealthSessionRequest.IceServer;
 import org.kurento.tutorial.one2onecall.room.Room;
 import org.kurento.tutorial.one2onecall.room.RoomManager;
-import org.kurento.tutorial.one2onecall.users.AlexaUserSession;
 import org.kurento.tutorial.one2onecall.users.UserRegistry;
 import org.kurento.tutorial.one2onecall.users.UserSession;
 import org.kurento.tutorial.one2onecall.users.WebUserSession;
@@ -113,7 +111,7 @@ public class CallHandler extends TextWebSocketHandler {
 
 	// If doctor join later
 	private void providerJoinRoom(String roomName){
-		Room room = roomManager.getRoom(roomName);
+		Room room = roomManager.getRoomOrCreate(roomName);
 
 		WebUserSession provider = room.getProvider();
 
@@ -162,7 +160,7 @@ public class CallHandler extends TextWebSocketHandler {
 	}
 
 	private void reNegotiateWithSdpAnswer(String roomName, String updatedSdpAnswer) {
-		Room room = roomManager.getRoom(roomName);
+		Room room = roomManager.getRoomOrCreate(roomName);
 
 		room.getCallMediaPipeline().getProviderWebRtcEp().processAnswer(updatedSdpAnswer);
 		log.info("Updated SDP answer has been processed by provider");
@@ -199,7 +197,7 @@ public class CallHandler extends TextWebSocketHandler {
 		String roomName = jsonMessage.getAsJsonPrimitive("room").getAsString();
 		String sdpOffer = jsonMessage.getAsJsonPrimitive("sdpOffer").getAsString();
 
-		Room room = roomManager.getRoom(roomName);
+		Room room = roomManager.getRoomOrCreate(roomName);
 		WebUserSession webUserSession = (WebUserSession) session;
 		webUserSession.setSdpOffer(sdpOffer);
 		room.joinAsProvider(providerName, webUserSession);
@@ -214,7 +212,7 @@ public class CallHandler extends TextWebSocketHandler {
 	public void terminate(String roomName) {
 		// Both users can stop the communication. A 'stopCommunication'
 		// message will be sent to the other peer.
-		Room room = roomManager.getRoom(roomName);
+		Room room = roomManager.getRoomOrCreate(roomName);
 		room.getCallMediaPipeline().release();
 		roomManager.removeRoom(room);
 	}
@@ -223,7 +221,7 @@ public class CallHandler extends TextWebSocketHandler {
 	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) {
 		log.info("Connection is closed");
 		UserSession stopperUser = registry.getBySession(session);
-		Room room = roomManager.getRoom(stopperUser.getRoomName());
+		Room room = roomManager.getRoomOrCreate(stopperUser.getRoomName());
 		roomManager.removeRoom(room);
 	}
 

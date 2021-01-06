@@ -39,7 +39,7 @@ public class UpdateSession {
             updateSession.getUserName(), updateSession.getSessionId());
 
         // Find the room
-        Room room = roomManager.getRoom(updateSession.getSessionId());
+        Room room = roomManager.getRoomOrThrow(updateSession.getSessionId());
         CallMediaPipeline callMediaPipeline = room.getCallMediaPipeline();
         callMediaPipeline.updateAlexaWebRtcEp();
 

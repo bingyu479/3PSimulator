@@ -56,7 +56,7 @@ public class InitiateSession {
 		log.info("Alexa user {} has been registered successfully", initiateSession.getUserName());
 
 		// Join room
-		Room room = roomManager.getRoom(initiateSession.getSessionId());
+		Room room = roomManager.getRoomOrCreate(initiateSession.getSessionId());
 		room.joinAsAlexa(initiateSession.getUserName(), alexaUserSession);
 
 		// start the call
@@ -86,7 +86,7 @@ public class InitiateSession {
 		}
 
 		alexaSdpAnswer = callMediaPipeline.getAlexaWebRtcEp().getLocalSessionDescriptor();
-		alexa.answerGeneratedForSession(alexaSdpAnswer, registry);
+//		alexa.answerGeneratedForSession(alexaSdpAnswer, registry);
 		return new TelehealthSessionResponse(initiateSession.getUserName(), initiateSession.getSessionId(), alexaSdpAnswer);
 	}
 
