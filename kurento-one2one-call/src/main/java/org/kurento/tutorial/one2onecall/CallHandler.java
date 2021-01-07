@@ -121,8 +121,8 @@ public class CallHandler extends TextWebSocketHandler {
 
 		GStreamerFilter filter = new GStreamerFilter
 			.Builder(callMediaPipeline.getPipeline(), "textoverlay font-desc=\"Sans 24\" text="
-			+ "\"" + provider.getName() + "\""
-			+ " valignment=top halignment=left shaded-background=true").build();
+			+ "\"" + "\n\n" + provider.getName() + "\""
+			+ " valignment=top halignment=left").build();
 		callMediaPipeline.getProviderWebRtcEp().connect(filter);
 		filter.connect(callMediaPipeline.getAlexaWebRtcEp());
 
