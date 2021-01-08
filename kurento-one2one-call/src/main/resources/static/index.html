@@ -53,7 +53,7 @@
 		<div class="page-header">
 			<h1>Demo: Video Call with Telehealth</h1>
 		</div>
-		<div class="row">
+		<div id="join-container" class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="form-horizontal">
 					<div class="form-group">
@@ -86,7 +86,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+
+		<div id="call-container" class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<div id="videoBig">
 					<video id="videoOutput" autoplay width="640px" height="480px"
@@ -100,7 +101,7 @@
 					<button id="toggleMute" class="btn btn-success"><i class="fas fa-microphone"></i><span>Mute</span></button>
 					<button id="toggleVideo" class="btn btn-success"><i class="fas fa-video"></i><span>Video Off</span></button>
 					<button id="leave" class="btn btn-danger"><i class="glyphicon glyphicon-stop"></i>Leave Room</button>
-					<button id="terminate" class="btn btn-danger"><i class="glyphicon glyphicon-stop"></i>Close Session</button>
+					<button id="terminate" class="btn btn-danger"><i class="glyphicon glyphicon-stop"></i>End Meeting for All</button>
 				</div>
 			</div>
 		</div>

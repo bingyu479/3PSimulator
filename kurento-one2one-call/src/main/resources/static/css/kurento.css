@@ -72,6 +72,9 @@ div#videoSmall {
 	z-index: 10;
 	padding: 0px;
 }
+div#call-container {
+    display: none;
+}
 
 div.dragged {
 	cursor: all-scroll !important;

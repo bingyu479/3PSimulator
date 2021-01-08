@@ -154,6 +154,10 @@ function register() {
 }
 
 function joinAsDoctor() {
+
+    $("#join-container").hide();
+    $("#call-container").show();
+
 	if (document.getElementById('room').value == '') {
 		window.alert('You must specify the room name');
 		return;
@@ -251,6 +255,9 @@ function muteAudioOffer(error, offerSdp) {
 }
 
 function joinAsAlexa() {
+    $("#join-container").hide();
+    $("#call-container").show();
+
 	if (document.getElementById('room').value == '') {
 		window.alert('You must specify the room name');
 		return;
@@ -349,6 +356,9 @@ function onReNegotiation(error, sdpAnswer) {
 }
 
 function leave() {
+    $("#call-container").hide();
+    $("#join-container").show();
+
     setCallState(NO_CALL);
     if (webRtcPeer) {
     		webRtcPeer.dispose();
@@ -366,6 +376,9 @@ function leave() {
 }
 
 function terminate(message) {
+    $("#call-container").hide();
+    $("#join-container").show();
+
 	setCallState(NO_CALL);
 	if (webRtcPeer) {
 		webRtcPeer.dispose();
